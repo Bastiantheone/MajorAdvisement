@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="engineering.software.gsu.majoradvisement.QuestionActivity">
+
+    <Button
+    android:text="C"
+    android:layout_width="3000dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="18dp"
+    android:id="@+id/ans3button"
+    android:layout_below="@+id/ans2button"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="B"
+        android:layout_width="3000dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/ans2button"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/ans1button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="D"
+        android:layout_width="3000dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/ans4button"
+        android:layout_below="@+id/ans3button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="A"
+        android:layout_width="3000dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="99dp"
+        android:id="@+id/ans1button"
+        android:layout_below="@+id/questionText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Question"
+        android:id="@+id/questionText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Next"
+        android:id="@+id/next_button"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

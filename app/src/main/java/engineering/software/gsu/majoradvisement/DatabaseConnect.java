@@ -10,7 +10,7 @@ public class DatabaseConnect {
 
     //test methods
     public TextQuestion getTextQuestion(){
-        TextQuestion test = new TextQuestion("Preffered Major");
+        TextQuestion test = new TextQuestion("Preferred Major");
         Answer cs = new Answer("CS",5,10,0,0,0);
         test.addAnswer(cs);
         Answer it = new Answer("IT",5,0,10,0,0);

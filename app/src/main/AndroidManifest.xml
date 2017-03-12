@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SwipeActivity"></activity>
+        <activity android:name=".RateActivity"></activity>
     </application>
 
 </manifest>

@@ -5,21 +5,43 @@ package engineering.software.gsu.majoradvisement;
  */
 
 public class Answer {
-    String text = "Test";
-    int score = 40;
+    private String text;
+    private int score;
+    private int csRating;
+    private int itRating;
+    private int isRating;
+    private int ceRating;
 
-
-    public void print(){
-        System.out.println(this.text);
+    public Answer(String text, int score, int csRating, int itRating, int isRating, int ceRating){
+        this.text = text;
+        this.score = score;
+        this.csRating = csRating;
+        this.itRating = itRating;
+        this.isRating = isRating;
+        this.ceRating = ceRating;
     }
 
-
-    Answer(String nText){
-        this.text = nText;
+    public String getText() {
+        return text;
     }
 
-    Answer(String ntext, int nScore){
-        this.text = ntext;
-        this.score = nScore;
+    public int getScore() {
+        return score;
+    }
+
+    public int getCsRating() {
+        return csRating;
+    }
+
+    public int getItRating() {
+        return itRating;
+    }
+
+    public int getIsRating() {
+        return isRating;
+    }
+
+    public int getCeRating() {
+        return ceRating;
     }
 }

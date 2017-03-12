@@ -78,11 +78,13 @@ public class OnSwipeListener implements View.OnTouchListener {
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(view.getLayoutParams());
                 lp.gravity=Gravity.END;
                 view.setLayoutParams(lp);
+                view.setContentDescription("Right");
             }
             public void onSwipeLeft(){
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(view.getLayoutParams());
                 lp.gravity=Gravity.START;
                 view.setLayoutParams(lp);
+                view.setContentDescription("Left");
             }
         });
     }

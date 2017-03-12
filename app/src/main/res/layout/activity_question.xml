@@ -40,25 +40,28 @@
         android:text="A"
         android:layout_width="3000dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="74dp"
         android:id="@+id/ans1button"
         android:layout_below="@+id/questionText"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
+        android:id="@+id/questionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Question"
-        android:id="@+id/questionText"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:textSize="22sp"
+        android:text="Question"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
 
     <Button
-        android:text="Next"
+        android:text="@string/next"
         android:id="@+id/next_button"
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

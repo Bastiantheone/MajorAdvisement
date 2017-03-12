@@ -8,110 +8,122 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class QuestionActivity extends AppCompatActivity  implements View.OnClickListener {
+import java.util.ArrayList;
 
-    Button a, b, c, d, nextButton;
+public class QuestionActivity extends AppCompatActivity{
+
+    Button aBtn, bBtn, cBtn, dBtn, nextButton;
     TextView Q;
-
-    Button[] bArray = null;
-
-    Question test = new Question("Does this work?");
-    Answer a1 = new Answer ("Probably");
-    Answer no = new Answer("no");
-    Answer yes = new Answer("Yes");
-    Answer maybe = new Answer("Maybe");
-
-
+    boolean a,b,c,d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
-
-        a = (Button)findViewById(R.id.ans1button);
-        b = (Button)findViewById(R.id.ans2button);
-        c = (Button)findViewById(R.id.ans3button);
-        d = (Button)findViewById(R.id.ans4button);
+        aBtn = (Button)findViewById(R.id.ans1button);
+        bBtn = (Button)findViewById(R.id.ans2button);
+        cBtn = (Button)findViewById(R.id.ans3button);
+        dBtn = (Button)findViewById(R.id.ans4button);
         Q = (TextView)findViewById(R.id.questionText);
         nextButton = (Button)findViewById(R.id.next_button);
 
-        bArray = new Button[] {a,b,c,d};
+        //this needs to be changed
+        DatabaseConnect db = new DatabaseConnect();
+        TextQuestion question = db.getTextQuestion();
 
-        test.add(a1);
-        test.add(no);
-        test.add(yes);
-        test.add(maybe);
-
-        setQuest(test);
-
-
-
-
+        final ArrayList<Answer> answers = question.getAnswers();
+        Q.setText(question.getQuestionText());
+        aBtn.setText(answers.get(0).getText());
+        bBtn.setText(answers.get(1).getText());
+        cBtn.setText(answers.get(2).getText());
+        dBtn.setText(answers.get(3).getText());
 
         //Below are the methods to make the color swaps on the multiple choice question list: As well as set
         //the answers
-        a.setOnClickListener(new View.OnClickListener() {
+        aBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                a.setBackgroundColor(Color.CYAN);
-                b.setBackgroundColor(Color.RED);
-                c.setBackgroundColor(Color.RED);
-                d.setBackgroundColor(Color.RED);
+                a=true;b=false;c=false;d=false;
+                aBtn.setBackgroundColor(Color.CYAN);
+                bBtn.setBackgroundColor(Color.RED);
+                cBtn.setBackgroundColor(Color.RED);
+                dBtn.setBackgroundColor(Color.RED);
             }
         });
-        b.setOnClickListener(new View.OnClickListener() {
+        bBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                a.setBackgroundColor(Color.RED);
-                b.setBackgroundColor(Color.CYAN);
-                c.setBackgroundColor(Color.RED);
-                d.setBackgroundColor(Color.RED);
+                a=false;b=true;c=false;d=false;
+                aBtn.setBackgroundColor(Color.RED);
+                bBtn.setBackgroundColor(Color.CYAN);
+                cBtn.setBackgroundColor(Color.RED);
+                dBtn.setBackgroundColor(Color.RED);
             }
         });
-        c.setOnClickListener(new View.OnClickListener() {
+        cBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                a.setBackgroundColor(Color.RED);
-                b.setBackgroundColor(Color.RED);
-                c.setBackgroundColor(Color.CYAN);
-                d.setBackgroundColor(Color.RED);
+                a=false;b=false;c=true;d=false;
+                aBtn.setBackgroundColor(Color.RED);
+                bBtn.setBackgroundColor(Color.RED);
+                cBtn.setBackgroundColor(Color.CYAN);
+                dBtn.setBackgroundColor(Color.RED);
             }
         });
-        d.setOnClickListener(new View.OnClickListener() {
+        dBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                a.setBackgroundColor(Color.RED);
-                b.setBackgroundColor(Color.RED);
-                c.setBackgroundColor(Color.RED);
-                d.setBackgroundColor(Color.CYAN);
+                a=false;b=false;c=false;d=true;
+                aBtn.setBackgroundColor(Color.RED);
+                bBtn.setBackgroundColor(Color.RED);
+                cBtn.setBackgroundColor(Color.RED);
+                dBtn.setBackgroundColor(Color.CYAN);
             }
         });
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(a){
+                    //increase scores
+                    /*
+                    score+=answers.get(0).getScore();
+                    csRating+=answers.get(0).getCsRating();
+                    itRating+=answers.get(0).getItRating();
+                    isRating+=answers.get(0).getIsRating();
+                    ceRating+=answers.get(0).getCeRating();*/
+                }
+                else if(b){
+                    //increase scores
+                    /*
+                    score+=answers.get(1).getScore();
+                    csRating+=answers.get(1).getCsRating();
+                    itRating+=answers.get(1).getItRating();
+                    isRating+=answers.get(1).getIsRating();
+                    ceRating+=answers.get(1).getCeRating();*/
+                }
+                else if(c){
+                    //increase scores
+                    /*
+                    score+=answers.get(2).getScore();
+                    csRating+=answers.get(2).getCsRating();
+                    itRating+=answers.get(2).getItRating();
+                    isRating+=answers.get(2).getIsRating();
+                    ceRating+=answers.get(2).getCeRating();*/
+                }
+                else if(d){
+                    //increase scores
+                    /*
+                    score+=answers.get(3).getScore();
+                    csRating+=answers.get(3).getCsRating();
+                    itRating+=answers.get(3).getItRating();
+                    isRating+=answers.get(3).getIsRating();
+                    ceRating+=answers.get(3).getCeRating();*/
+                }
+
+                //first decide which kind of question is next then call appropriate activity
                 Intent i = new Intent(getBaseContext(),SwipeActivity.class);
                 startActivity(i);
             }
         });
-
-
-    }
-
-    public void onClick(View v){
-        buttonClicked(v);
-    }
-
-    private void buttonClicked (View v){
-        Button e = (Button)v;
-        e.setBackgroundColor(Color.CYAN);
-    }
-
-    public void setQuest(Question focus){
-        Q.setText(focus.text);
-        a.setText(focus.answers.get(0).text);
-        b.setText(focus.answers.get(1).text);
-        c.setText(focus.answers.get(2).text);
-        d.setText(focus.answers.get(3).text);
-
     }
 }

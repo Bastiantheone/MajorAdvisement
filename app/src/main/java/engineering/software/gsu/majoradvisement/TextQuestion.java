@@ -9,10 +9,13 @@ import java.util.ArrayList;
 public class TextQuestion {
     private String text;
     private ArrayList<Answer> answers;
-    public TextQuestion(String text){
+    int FunValue = 0;
+    public TextQuestion(String text, int Fun){
         this.text=text;
         answers = new ArrayList<>(4);
+        FunValue = Fun;
     }
+
     public void addAnswer(Answer newAnswer){
         answers.add(newAnswer);
     }

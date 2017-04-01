@@ -4,10 +4,13 @@ package engineering.software.gsu.majoradvisement;
  * Created by Bastian Wieck on 3/11/2017.
  */
 //left is when the image is swipped to the left, right is for the right
-public class Image {
+    // code was slightly redudant, changed it into a child of the Answer class for simplicity sake
+public class Image  {
     private int imgID;
 
-    private int leftScore;
+    private Answer leftAnswer;
+    private Answer rightAnswer;
+    /*private int leftScore;
     private int leftCSRating;
     private int leftITRating;
     private int leftISRating;
@@ -17,12 +20,15 @@ public class Image {
     private int rightCSRating;
     private int rightITRating;
     private int rightISRating;
-    private int rightCERating;
+    private int rightCERating;*/
 
     public Image(int imgID, int leftScore, int leftCSRating, int leftITRating, int leftISRating, int leftCERating,
                  int rightScore, int rightCSRating, int rightITRating, int rightISRating, int rightCERating){
         this.imgID = imgID;
-        this.leftScore = leftScore;
+        this.leftAnswer = new Answer(imgID + "", leftScore, leftCSRating, leftITRating, leftISRating, leftCERating);
+        this.rightAnswer= new Answer(imgID + "", rightScore, rightCSRating, rightITRating, rightISRating, rightCERating);
+
+        /*this.leftScore = leftScore;
         this.leftCSRating = leftCSRating;
         this.leftITRating = leftITRating;
         this.leftISRating = leftISRating;
@@ -31,7 +37,8 @@ public class Image {
         this.rightCSRating = rightCSRating;
         this.rightITRating = rightITRating;
         this.rightISRating = rightISRating;
-        this.rightCERating = rightCERating;
+        this.rightCERating = rightCERating;*/
+
     }
 
     public int getImgID(){
@@ -39,42 +46,42 @@ public class Image {
     }
 
     public int getLeftScore() {
-        return leftScore;
+        return leftAnswer.getScore();
     }
 
     public int getLeftCSRating() {
-        return leftCSRating;
+        return leftAnswer.getCsRating();
     }
 
     public int getLeftITRating() {
-        return leftITRating;
+        return leftAnswer.getItRating();
     }
 
     public int getLeftISRating() {
-        return leftISRating;
+        return leftAnswer.getIsRating();
     }
 
     public int getLeftCERating() {
-        return leftCERating;
+        return leftAnswer.getCeRating();
     }
 
     public int getRightScore() {
-        return rightScore;
+        return rightAnswer.getScore();
     }
 
     public int getRightCSRating() {
-        return rightCSRating;
+        return rightAnswer.getCsRating();
     }
 
     public int getRightITRating() {
-        return rightITRating;
+        return rightAnswer.getItRating();
     }
 
     public int getRightISRating() {
-        return rightISRating;
+        return rightAnswer.getIsRating();
     }
 
     public int getRightCERating() {
-        return rightCERating;
+        return rightAnswer.getCeRating();
     }
 }

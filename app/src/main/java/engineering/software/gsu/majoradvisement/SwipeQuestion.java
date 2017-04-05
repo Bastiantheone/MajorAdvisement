@@ -6,7 +6,8 @@ import java.util.ArrayList;
  * Created by Bastian Wieck on 3/11/2017.
  */
 
-public class SwipeQuestion {
+public class SwipeQuestion extends Question{
+    int FunValue = 0;
     private String textLeft;
     private String textRight;
     private ArrayList<Image> images;
@@ -26,5 +27,10 @@ public class SwipeQuestion {
     }
     public String getTextRight(){
         return textRight;
+    }
+
+    public void display(){
+
+        //insert the display Method here
     }
 }

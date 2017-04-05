@@ -4,7 +4,7 @@ package engineering.software.gsu.majoradvisement;
  * Created by Bastian Wieck on 3/11/2017.
  */
 
-public class RateQuestion {
+public class RateQuestion extends Question {
     public static final int NONE = 0;
     public static final int LITTLE = 1;
     public static final int SOME = 2;
@@ -49,5 +49,9 @@ public class RateQuestion {
 
     public int getCe() {
         return ce;
+    }
+
+    public void display(){
+        //insert the display method
     }
 }

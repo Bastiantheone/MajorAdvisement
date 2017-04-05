@@ -5,6 +5,7 @@ package engineering.software.gsu.majoradvisement;
  */
 
 public class Question {
+    int FunValue;
 
     public void display(){
     }

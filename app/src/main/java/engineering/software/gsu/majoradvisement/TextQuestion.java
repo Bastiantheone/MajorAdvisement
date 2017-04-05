@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by Bastian Wieck on 3/7/2017.
  */
 
-public class TextQuestion {
+public class TextQuestion extends Question {
     private String text;
     private ArrayList<Answer> answers;
     int FunValue = 0;
@@ -24,5 +24,10 @@ public class TextQuestion {
     }
     public String getQuestionText(){
         return text;
+    }
+
+
+    public void display(){
+
     }
 }

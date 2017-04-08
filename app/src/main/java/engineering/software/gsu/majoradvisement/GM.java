@@ -18,19 +18,19 @@ public class GM {
     private int globalScore, globalCsScore, globalITScore, globalISScore, globalCEScore;
     private int funValue, fCS, fIT, fIS, fCE;
 
-    public ArrayList<TextQuestion> questCS = new ArrayList<TextQuestion>();
-    public ArrayList<TextQuestion> questIT = new ArrayList<TextQuestion>();
-    public ArrayList<TextQuestion> questIS = new ArrayList<TextQuestion>();
-    public ArrayList<TextQuestion> questCE = new ArrayList<TextQuestion>();
+    public ArrayList<Question> questCS = new ArrayList<Question>();
+    public ArrayList<Question> questIT = new ArrayList<Question>();
+    public ArrayList<Question> questIS = new ArrayList<Question>();
+    public ArrayList<Question> questCE = new ArrayList<Question>();
 
     //Use it to pull the next Question from the Array lists, uses combination of 2 methods
     //
 
 
-    public TextQuestion nextTxtQuestion(){
-        TextQuestion Selection = new TextQuestion("Blank", 0);
+    public Question nextTxtQuestion(){
+        Question Selection = new Question();
         int total = fCS + fIT + fIS + fCE;
-        ArrayList<TextQuestion> focus = new ArrayList<TextQuestion>();
+        ArrayList<Question> focus = new ArrayList<Question>();
         Random random = new Random();
         int randomNum = random.nextInt(total) + 1 ;
 
@@ -53,8 +53,8 @@ public class GM {
         return Selection;
     }
 
-    public TextQuestion fetchTxtQuestion(ArrayList<TextQuestion> focus, int fun){
-        TextQuestion dummy = new TextQuestion("example", 0);
+    public Question fetchTxtQuestion(ArrayList<Question> focus, int fun){
+        Question dummy = new Question();
 
         for(int i = 0; i < focus.size(); i++){
             if(fun == focus.get(i).FunValue){

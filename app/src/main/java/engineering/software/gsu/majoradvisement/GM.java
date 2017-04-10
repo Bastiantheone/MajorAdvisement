@@ -17,8 +17,7 @@ public class GM {
 
     private int globalScore, globalCsScore, globalITScore, globalISScore, globalCEScore;
     private int funValue, fCS, fIT, fIS, fCE;
-    private GM Alpha;
-
+    private static GM Alpha;
     public ArrayList<Question> questCS = new ArrayList<Question>();
     public ArrayList<Question> questIT = new ArrayList<Question>();
     public ArrayList<Question> questIS = new ArrayList<Question>();
@@ -27,18 +26,19 @@ public class GM {
     //Use it to pull the next Question from the Array lists, uses combination of 2 methods
     //
 
-    public GM initailize(){
+    public static GM initialize(){
         if(Alpha == null){
             Alpha = new GM();
-            // Insert the 'load' statement
-
-            return this.Alpha;
+            Alpha.loadQuestions();
+            
         }
         else{
-            return this.Alpha;
+            return Alpha;
         }
+        return Alpha;
     }
 
+    private GM(){};
 
     public Question nextQuestion(){
         Question Selection = new Question();

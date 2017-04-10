@@ -7,5 +7,9 @@ import android.app.Application;
  */
 
 public class MyApplication extends Application{
-    GM GameMaster = new GM();
+
+    GM GameMaster = GM.initialize();
+
+
+
 }

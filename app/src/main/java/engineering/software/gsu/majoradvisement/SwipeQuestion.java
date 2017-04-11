@@ -1,5 +1,9 @@
 package engineering.software.gsu.majoradvisement;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+
 import java.util.ArrayList;
 
 /**
@@ -29,8 +33,9 @@ public class SwipeQuestion extends Question{
         return textRight;
     }
 
-    public void display(){
-
-        //insert the display Method here
+    @Override
+    public void display(Activity activity){
+        Intent intent = new Intent(activity,SwipeActivity.class);
+        activity.startActivity(intent);
     }
 }

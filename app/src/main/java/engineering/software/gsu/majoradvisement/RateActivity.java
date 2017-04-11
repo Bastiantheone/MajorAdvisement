@@ -15,6 +15,7 @@ public class RateActivity extends AppCompatActivity {
     private Button nextButton;
     private RatingBar ratingBar;
     private TextView textView;
+    private RateQuestion rateQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,26 +25,31 @@ public class RateActivity extends AppCompatActivity {
         ratingBar = (RatingBar)findViewById(R.id.rating_bar);
         textView = (TextView)findViewById(R.id.question_text);
 
-        //change this
-        DatabaseConnect db = new DatabaseConnect();
-        final RateQuestion rateQuestion = db.getRateQuestion();
+        rateQuestion = (RateQuestion)GM.currentQuestion;
 
         textView.setText(rateQuestion.getText());
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 float rating = ratingBar.getRating();
-                /*
-                score+=rateQuestion.getScore();
-                csRating+=rateQuestion.getCs()*rating;
-                itRating+=rateQuestion.getIt()*rating;
-                isRating+=rateQuestion.getIs()*rating;
-                ceRating+=rateQuestion.getCe()*rating;*/
 
-                //change this
-                Intent intent = new Intent(getBaseContext(),QuestionActivity.class);
-                startActivity(intent);
+                GM.globalScore+=rateQuestion.getScore();
+                GM.globalCsScore+=calcScore(rateQuestion.getCs(),rating);
+                GM.globalITScore+=calcScore(rateQuestion.getIt(),rating);
+                GM.globalISScore+=calcScore(rateQuestion.getIs(),rating);
+                GM.globalCEScore+=calcScore(rateQuestion.getCe(),rating);
+
+                next();
             }
         });
+    }
+
+    public int calcScore(int score, float rating){
+        float a = Math.abs(score-rating);
+        return (int)((5 - a)*2);
+    }
+
+    public void next(){
+        GM.initialize().nextQuestion().display(this);
     }
 }

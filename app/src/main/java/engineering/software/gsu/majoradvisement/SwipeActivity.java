@@ -31,9 +31,7 @@ public class SwipeActivity extends AppCompatActivity {
         upperImage.setOnTouchListener(new OnSwipeListener(getBaseContext()));
         lowerImage.setOnTouchListener(new OnSwipeListener(getBaseContext()));
 
-        //change this
-        DatabaseConnect db = new DatabaseConnect();
-        SwipeQuestion question = db.getSwipeQuestion();
+        SwipeQuestion question = (SwipeQuestion)GM.currentQuestion;
 
         final ArrayList<Image> images = question.getImages();
         upperImage.setImageResource(images.get(0).getImgID());
@@ -45,43 +43,40 @@ public class SwipeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(upperImage.getContentDescription().equals("Right")){
-                    /*
-                    score+=images.get(0).getRightScore();
-                    csRating+=images.get(0).getRightCSRating();
-                    itRating+=images.get(0).getRightITRating();
-                    isRating+=images.get(0).getRightISRating();
-                    ceRating+=images.get(0).getRightCERating();*/
+
+                    GM.globalScore+=images.get(0).getRightScore();
+                    GM.globalCsScore+=images.get(0).getRightCSRating();
+                    GM.globalITScore+=images.get(0).getRightITRating();
+                    GM.globalISScore+=images.get(0).getRightISRating();
+                    GM.globalCEScore+=images.get(0).getRightCERating();
                 }
                 else if(upperImage.getContentDescription().equals("Left")){
-                    /*
-                    score+=images.get(0).getLeftScore();
-                    csRating+=images.get(0).getLeftCSRating();
-                    itRating+=images.get(0).getLeftITRating();
-                    isRating+=images.get(0).getLeftISRating();
-                    ceRating+=images.get(0).getLeftCERating();*/
+                    GM.globalScore+=images.get(0).getLeftScore();
+                    GM.globalCsScore+=images.get(0).getLeftCSRating();
+                    GM.globalITScore+=images.get(0).getLeftITRating();
+                    GM.globalISScore+=images.get(0).getLeftISRating();
+                    GM.globalCEScore+=images.get(0).getLeftCERating();
                 }
                 if(lowerImage.getContentDescription().equals("Right")){
-                    /*
-                    score+=images.get(1).getRightScore();
-                    csRating+=images.get(1).getRightCSRating();
-                    itRating+=images.get(1).getRightITRating();
-                    isRating+=images.get(1).getRightISRating();
-                    ceRating+=images.get(1).getRightCERating();*/
+                    GM.globalScore+=images.get(1).getRightScore();
+                    GM.globalCsScore+=images.get(1).getRightCSRating();
+                    GM.globalITScore+=images.get(1).getRightITRating();
+                    GM.globalISScore+=images.get(1).getRightISRating();
+                    GM.globalCEScore+=images.get(1).getRightCERating();
                 }
                 else if(lowerImage.getContentDescription().equals("Left")){
-                    /*
-                    score+=images.get(1).getLeftScore();
-                    csRating+=images.get(1).getLeftCSRating();
-                    itRating+=images.get(1).getLeftITRating();
-                    isRating+=images.get(1).getLeftISRating();
-                    ceRating+=images.get(1).getLeftCERating();*/
+                    GM.globalScore+=images.get(1).getLeftScore();
+                    GM.globalCsScore+=images.get(1).getLeftCSRating();
+                    GM.globalITScore+=images.get(1).getLeftITRating();
+                    GM.globalISScore+=images.get(1).getLeftISRating();
+                    GM.globalCEScore+=images.get(1).getLeftCERating();
                 }
-
-                //change this
-                Intent intent = new Intent(getBaseContext(),RateActivity.class);
-                startActivity(intent);
+                next();
             }
         });
     }
 
+    public void next(){
+        GM.initialize().nextQuestion().display(this);
+    }
 }

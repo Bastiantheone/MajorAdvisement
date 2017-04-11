@@ -1,5 +1,9 @@
 package engineering.software.gsu.majoradvisement;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+
 /**
  * Created by Bastian Wieck on 3/11/2017.
  */
@@ -51,7 +55,9 @@ public class RateQuestion extends Question {
         return ce;
     }
 
-    public void display(){
-        //insert the display method
+    @Override
+    public void display(Activity activity){
+        Intent intent = new Intent(activity,RateActivity.class);
+        activity.startActivity(intent);
     }
 }

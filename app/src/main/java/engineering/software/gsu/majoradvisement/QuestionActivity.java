@@ -27,9 +27,7 @@ public class QuestionActivity extends AppCompatActivity{
         Q = (TextView)findViewById(R.id.questionText);
         nextButton = (Button)findViewById(R.id.next_button);
 
-        //this needs to be changed
-        DatabaseConnect db = new DatabaseConnect();
-        TextQuestion question = db.getTextQuestion();
+        TextQuestion question = (TextQuestion)GM.currentQuestion;
 
         final ArrayList<Answer> answers = question.getAnswers();
         Q.setText(question.getQuestionText());
@@ -85,45 +83,47 @@ public class QuestionActivity extends AppCompatActivity{
             public void onClick(View view) {
                 if(a){
                     //increase scores
-                    /*
-                    score+=answers.get(0).getScore();
-                    csRating+=answers.get(0).getCsRating();
-                    itRating+=answers.get(0).getItRating();
-                    isRating+=answers.get(0).getIsRating();
-                    ceRating+=answers.get(0).getCeRating();*/
+
+                    GM.globalScore+=answers.get(0).getScore();
+                    GM.globalCsScore+=answers.get(0).getCsRating();
+                    GM.globalITScore+=answers.get(0).getItRating();
+                    GM.globalISScore+=answers.get(0).getIsRating();
+                    GM.globalCEScore+=answers.get(0).getCeRating();
                 }
                 else if(b){
                     //increase scores
-                    /*
-                    score+=answers.get(1).getScore();
-                    csRating+=answers.get(1).getCsRating();
-                    itRating+=answers.get(1).getItRating();
-                    isRating+=answers.get(1).getIsRating();
-                    ceRating+=answers.get(1).getCeRating();*/
+
+                    GM.globalScore+=answers.get(1).getScore();
+                    GM.globalCsScore+=answers.get(1).getCsRating();
+                    GM.globalITScore+=answers.get(1).getItRating();
+                    GM.globalISScore+=answers.get(1).getIsRating();
+                    GM.globalCEScore+=answers.get(1).getCeRating();
                 }
                 else if(c){
                     //increase scores
-                    /*
-                    score+=answers.get(2).getScore();
-                    csRating+=answers.get(2).getCsRating();
-                    itRating+=answers.get(2).getItRating();
-                    isRating+=answers.get(2).getIsRating();
-                    ceRating+=answers.get(2).getCeRating();*/
+
+                    GM.globalScore+=answers.get(2).getScore();
+                    GM.globalCsScore+=answers.get(2).getCsRating();
+                    GM.globalITScore+=answers.get(2).getItRating();
+                    GM.globalISScore+=answers.get(2).getIsRating();
+                    GM.globalCEScore+=answers.get(2).getCeRating();
                 }
                 else if(d){
                     //increase scores
-                    /*
-                    score+=answers.get(3).getScore();
-                    csRating+=answers.get(3).getCsRating();
-                    itRating+=answers.get(3).getItRating();
-                    isRating+=answers.get(3).getIsRating();
-                    ceRating+=answers.get(3).getCeRating();*/
+
+                    GM.globalScore+=answers.get(3).getScore();
+                    GM.globalCsScore+=answers.get(3).getCsRating();
+                    GM.globalITScore+=answers.get(3).getItRating();
+                    GM.globalISScore+=answers.get(3).getIsRating();
+                    GM.globalCEScore+=answers.get(3).getCeRating();
                 }
 
-                //first decide which kind of question is next then call appropriate activity
-                Intent i = new Intent(getBaseContext(),SwipeActivity.class);
-                startActivity(i);
+                next();
             }
         });
+    }
+
+    public void next(){
+        GM.initialize().nextQuestion().display(this);
     }
 }

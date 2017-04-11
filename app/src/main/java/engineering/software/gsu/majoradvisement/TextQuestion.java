@@ -1,5 +1,9 @@
 package engineering.software.gsu.majoradvisement;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+
 import java.util.ArrayList;
 
 /**
@@ -26,8 +30,9 @@ public class TextQuestion extends Question {
         return text;
     }
 
-
-    public void display(){
-
+    @Override
+    public void display(Activity activity){
+        Intent intent = new Intent(activity,QuestionActivity.class);
+        activity.startActivity(intent);
     }
 }

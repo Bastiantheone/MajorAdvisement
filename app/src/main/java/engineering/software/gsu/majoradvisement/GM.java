@@ -14,8 +14,8 @@ import java.util.Random;
     //pop up
 
 public class GM {
-
-    private int globalScore, globalCsScore, globalITScore, globalISScore, globalCEScore;
+    public static int globalScore, globalCsScore, globalITScore, globalISScore, globalCEScore;
+    public static boolean inSession;//variable to check if a user is logged in
     private int funValue, fCS, fIT, fIS, fCE;
     private static GM Alpha;
     public ArrayList<Question> questCS = new ArrayList<Question>();
@@ -23,14 +23,16 @@ public class GM {
     public ArrayList<Question> questIS = new ArrayList<Question>();
     public ArrayList<Question> questCE = new ArrayList<Question>();
 
+    public static Question currentQuestion;
+
     //Use it to pull the next Question from the Array lists, uses combination of 2 methods
     //
 
     public static GM initialize(){
-        if(Alpha == null){
+        if(!inSession){
             Alpha = new GM();
+            inSession = true;
             Alpha.loadQuestions();
-            
         }
         else{
             return Alpha;
@@ -75,7 +77,7 @@ public class GM {
                 return dummy;
             }
         }
-
+        currentQuestion = dummy;
         return dummy;
     }
 
@@ -86,6 +88,8 @@ public class GM {
         // Method for loading would go in here, you'd create an array list of questions and answers and feed them into each other and then
         //make the master list and edit the individual questions based on format
         //the usuage of it after the method is completed would be in the MyApplication.java class in order to allow us to edit it on initialization
+
+        //set the first question
     }
 
 }

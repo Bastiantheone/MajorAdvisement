@@ -9,9 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class QuestionActivity extends AppCompatActivity{
-
+    private List<Answer> answers;
     Button aBtn, bBtn, cBtn, dBtn, nextButton;
     TextView Q;
     boolean a,b,c,d;
@@ -29,7 +30,7 @@ public class QuestionActivity extends AppCompatActivity{
 
         TextQuestion question = (TextQuestion)GM.currentQuestion;
 
-        final ArrayList<Answer> answers = question.getAnswers();
+        answers = question.getAnswers();
         Q.setText(question.getQuestionText());
         aBtn.setText(answers.get(0).getText());
         bBtn.setText(answers.get(1).getText());
@@ -124,6 +125,6 @@ public class QuestionActivity extends AppCompatActivity{
     }
 
     public void next(){
-        GM.initialize().nextQuestion().display(this);
+        GM.initialize(this).nextQuestion().display(this);
     }
 }

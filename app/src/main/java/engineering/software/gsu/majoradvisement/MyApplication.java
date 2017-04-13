@@ -7,14 +7,5 @@ import android.app.Application;
  */
 
 public class MyApplication extends Application{
-    //move this line to Login page
-    GM GameMaster = GM.initialize();
-
-    @Override
-    public void onTerminate(){
-        super.onTerminate();
-        GM.inSession = false;
-        //save GM to Database
-    }
 
 }

@@ -1,6 +1,9 @@
 package engineering.software.gsu.majoradvisement;
 
+import android.content.Context;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -17,20 +20,20 @@ public class GM {
     public static int globalScore, globalCsScore, globalITScore, globalISScore, globalCEScore;
     public static int funValue, fCS, fIT, fIS, fCE;
     private static GM Alpha;
-    public ArrayList<Question> questCS = new ArrayList<Question>();
-    public ArrayList<Question> questIT = new ArrayList<Question>();
-    public ArrayList<Question> questIS = new ArrayList<Question>();
-    public ArrayList<Question> questCE = new ArrayList<Question>();
+    public List<Question> questCS = new ArrayList<Question>();
+    public List<Question> questIT = new ArrayList<Question>();
+    public List<Question> questIS = new ArrayList<Question>();
+    public List<Question> questCE = new ArrayList<Question>();
 
     public static Question currentQuestion;
 
     //Use it to pull the next Question from the Array lists, uses combination of 2 methods
     //
 
-    public static GM initialize(){
+    public static GM initialize(Context context){
         if(Alpha == null){
             Alpha = new GM();
-            Alpha.loadQuestions();
+            Alpha.loadQuestions(context);
         }
         else{
             return Alpha;
@@ -40,14 +43,15 @@ public class GM {
 
     private GM(){};
 
+    // FIXME when it stops display the score
     public Question nextQuestion(){
         Question Selection = new Question();
         int total = fCS + fIT + fIS + fCE;
-        ArrayList<Question> focus = new ArrayList<Question>();
+        List<Question> focus = new ArrayList<Question>();
         Random random = new Random();
         int randomNum = random.nextInt(total) + 1 ;
 
-        if (randomNum < fCS){
+        if (randomNum <= fCS){
             focus = questCS;
         }
         else if(randomNum < (fCS + fIT)){
@@ -66,7 +70,7 @@ public class GM {
         return Selection;
     }
 
-    public Question fetchQuestion(ArrayList<Question> focus, int fun){
+    public Question fetchQuestion(List<Question> focus, int fun){
         Question dummy = new Question();
 
         for(int i = 0; i < focus.size(); i++){
@@ -82,12 +86,15 @@ public class GM {
     //This is where some sort of 'loading' method will go, will create a hardcode example to run this
     //section of the code
 
-    public void loadQuestions(){
+    public void loadQuestions(Context context){
         // Method for loading would go in here, you'd create an array list of questions and answers and feed them into each other and then
         //make the master list and edit the individual questions based on format
-        //the usuage of it after the method is completed would be in the MyApplication.java class in order to allow us to edit it on initialization
-
-        //set the first question
+        //the usage of it after the method is completed would be in the MyApplication.java class in order to allow us to edit it on initialization
+        DbConnect dbConnect = DbConnect.get(context);
+        questCS = dbConnect.getQuestion(1);
+        questCE = dbConnect.getQuestion(2);
+        questIT = dbConnect.getQuestion(3);
+        questIS = dbConnect.getQuestion(4);
     }
 
 }

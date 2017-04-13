@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Bastian Wieck on 3/11/2017.
@@ -14,7 +15,7 @@ public class SwipeQuestion extends Question{
     int FunValue = 0;
     private String textLeft;
     private String textRight;
-    private ArrayList<Image> images;
+    private List<Image> images;
     public SwipeQuestion(String textLeft, String textRight, int id, int fun){
         this.textLeft=textLeft;
         this.textRight=textRight;
@@ -25,7 +26,10 @@ public class SwipeQuestion extends Question{
     public void addImage(Image newImage){
         images.add(newImage);
     }
-    public ArrayList<Image> getImages(){
+    public void addImages(List<Image> images){
+        this.images = images;
+    }
+    public List<Image> getImages(){
         return images;
     }
     public String getTextLeft(){

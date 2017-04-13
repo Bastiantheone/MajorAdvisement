@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Bastian Wieck on 3/7/2017.
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 
 public class TextQuestion extends Question {
     private String text;
-    private ArrayList<Answer> answers;
+    private List<Answer> answers;
     public TextQuestion(String text, int Fun, int id){
         this.text=text;
         answers = new ArrayList<>(4);
@@ -23,7 +24,10 @@ public class TextQuestion extends Question {
     public void addAnswer(Answer newAnswer){
         answers.add(newAnswer);
     }
-    public ArrayList<Answer> getAnswers(){
+    public void addAnswers(List<Answer> answers){
+        this.answers = answers;
+    }
+    public List<Answer> getAnswers(){
         return answers;
     }
     public String getQuestionText(){

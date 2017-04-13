@@ -10,11 +10,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SwipeActivity extends AppCompatActivity {
     private ImageView lowerImage, upperImage;
     private TextView leftText, centerText, rightText;
     private Button nextButton;
+
+    private List<Image> images;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,7 @@ public class SwipeActivity extends AppCompatActivity {
 
         SwipeQuestion question = (SwipeQuestion)GM.currentQuestion;
 
-        final ArrayList<Image> images = question.getImages();
+        images = question.getImages();
         upperImage.setImageResource(images.get(0).getImgID());
         lowerImage.setImageResource(images.get(1).getImgID());
         leftText.setText(question.getTextLeft());
@@ -77,6 +80,6 @@ public class SwipeActivity extends AppCompatActivity {
     }
 
     public void next(){
-        GM.initialize().nextQuestion().display(this);
+        GM.initialize(this).nextQuestion().display(this);
     }
 }

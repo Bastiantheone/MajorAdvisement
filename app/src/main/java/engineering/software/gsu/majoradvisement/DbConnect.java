@@ -3,6 +3,7 @@ package engineering.software.gsu.majoradvisement;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.ContactsContract;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -103,22 +104,37 @@ public class DbConnect {
         return new QuestionWrapper(cursor);
     }
 
-    public List<Question> getQuestion(){
+    public List<Question> getQuestion(int focus){
+        String where = " = "+focus;
+        // FIXME add Focus column
+        String whereR = QuestionDbSchema.gamemaster_Table.ratequestion_cols.focus + where;
         List<Question> questions = new ArrayList<>();
-        QuestionWrapper cursor = queryRateQestion(null,null);
+        QuestionWrapper cursor = queryRateQestion(whereR,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
-            Question question = cursor.ratey();
+            RateQuestion question = cursor.ratey();
             questions.add(question);
             cursor.moveToNext();
         }
         cursor.close();
 
-        cursor = queryTextQuestion(null,null);
+        String whereT = QuestionDbSchema.gamemaster_Table.textquestion_cols.focus + where;
+        cursor = queryTextQuestion(whereT,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
-            Question question = cursor.texty();
-            getAnswer(question.id);
+            TextQuestion question = cursor.texty();
+            question.addAnswers(getAnswers(question.id));
+            questions.add(question);
+            cursor.moveToNext();
+        }
+        cursor.close();
+
+        String whereS = QuestionDbSchema.gamemaster_Table.swipe_cols
+        cursor = querySwipes(whereS,null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            SwipeQuestion question = cursor.swipey();
+            question.addImages(getImages(question.id));
             questions.add(question);
             cursor.moveToNext();
         }
@@ -126,11 +142,45 @@ public class DbConnect {
 
         return questions;
     }
-    private Answer getAnswer(int id){
-        
+    private List<Answer> getAnswers(int id){
+        List<Answer> answers = new ArrayList<>(4);
+        String where = QuestionDbSchema.gamemaster_Table.answer_cols.answer_id + " = "+id;
+        QuestionWrapper cursor = queryAnswers(where,null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            Answer answer = cursor.getAnswer();
+            answers.add(answer);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return answers;
     }
-    // FIXME
+    private List<Image>getImages(int id){
+        List<Image> images = new ArrayList<>(2);
+        String where = QuestionDbSchema.gamemaster_Table.image_cols.answers_id+ " = "+id;//is going to get added
+        QuestionWrapper cursor = queryImages(where,null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            Image image = cursor.images();
+            images.add(image);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return images;
+    }
 
-
+    public GMHolder getGM(String username, String password){
+        String where = QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name+" = "+username+
+                " AND "+ QuestionDbSchema.gamemaster_Table.GameMasterCols.password+" = "+password;
+        QuestionWrapper cursor = queryAnswers(where,null);
+        cursor.moveToFirst();
+        GMHolder gm = null;
+        while (!cursor.isAfterLast()){
+            gm = cursor.getGameMaster();
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return gm;
+    }
 }
 

@@ -59,14 +59,16 @@ public class QuestionWrapper extends CursorWrapper {
         return images1;
     }
 
-    public SwipeActivity swipey() {
+    public SwipeQuestion swipey() {
         String text_left = getString(getColumnIndex(QuestionDbSchema.gamemaster_Table.swipe_cols.textLeft));
         String text_right = getString(getColumnIndex(QuestionDbSchema.gamemaster_Table.swipe_cols.textRight));
+        int id = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.swipe_cols.answers_id));
+        int fun = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.swipe_cols.fun));
 
         //SwipeQuestion swipey1 = new SwipeQuestion(text_left,text_right);
         //swipey1.getTextLeft();
         //swipey1.getTextRight();
-        SwipeActivity swipey1 = new SwipeActivity();
+        SwipeQuestion swipey1 = new SwipeQuestion(text_left,text_right,id,fun);
         return swipey1;
     }
 

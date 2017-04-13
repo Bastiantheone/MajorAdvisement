@@ -166,7 +166,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                 "create table " + gamemaster_Table.swipe_table +
                         "(" + gamemaster_Table.swipe_cols.textLeft +
                         "," + gamemaster_Table.swipe_cols.textRight +", "+
-                        gamemaster_Table.swipe_cols.answer_id+ ", "+
+                        gamemaster_Table.swipe_cols.answers_id+ ", "+
                         gamemaster_Table.swipe_cols.fun +
                         ");"
         );

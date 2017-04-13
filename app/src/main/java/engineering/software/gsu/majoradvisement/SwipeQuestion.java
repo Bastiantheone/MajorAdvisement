@@ -15,10 +15,12 @@ public class SwipeQuestion extends Question{
     private String textLeft;
     private String textRight;
     private ArrayList<Image> images;
-    public SwipeQuestion(String textLeft, String textRight){
+    public SwipeQuestion(String textLeft, String textRight, int id, int fun){
         this.textLeft=textLeft;
         this.textRight=textRight;
         images = new ArrayList<>(2);
+        super.id = id;
+        super.FunValue = fun;
     }
     public void addImage(Image newImage){
         images.add(newImage);

@@ -15,8 +15,7 @@ import java.util.Random;
 
 public class GM {
     public static int globalScore, globalCsScore, globalITScore, globalISScore, globalCEScore;
-    public static boolean inSession;//variable to check if a user is logged in
-    private int funValue, fCS, fIT, fIS, fCE;
+    public static int funValue, fCS, fIT, fIS, fCE;
     private static GM Alpha;
     public ArrayList<Question> questCS = new ArrayList<Question>();
     public ArrayList<Question> questIT = new ArrayList<Question>();
@@ -29,9 +28,8 @@ public class GM {
     //
 
     public static GM initialize(){
-        if(!inSession){
+        if(Alpha == null){
             Alpha = new GM();
-            inSession = true;
             Alpha.loadQuestions();
         }
         else{

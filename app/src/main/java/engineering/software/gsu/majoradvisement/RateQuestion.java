@@ -22,13 +22,14 @@ public class RateQuestion extends Question {
     private int is;
     private int ce;
 
-    public RateQuestion(String text, int score, int cs, int it, int is, int ce){
+    public RateQuestion(String text, int score, int cs, int it, int is, int ce, int fun){
         this.text = text;
         this.score = score;
         this.cs = cs;
         this.it = it;
         this.is = is;
         this.ce = ce;
+        super.FunValue = fun;
     }
 
     public String getText() {

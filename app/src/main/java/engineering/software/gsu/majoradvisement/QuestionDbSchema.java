@@ -59,6 +59,8 @@ public class QuestionDbSchema {
         public static final class swipe_cols {
             public static final String textLeft = "textLeft";
             public static final String textRight = "textRight";
+            public static final String fun = "fun";
+            public static final String answer_id = "answers_id";
         }
 
         public static final class ratequestion_cols {
@@ -68,11 +70,13 @@ public class QuestionDbSchema {
             public static final String it = "it";
             public static final String is = "is";
             public static final String ce = "ce";
+            public static final String fun = "fun";
         }
 
         public static final class textquestion_cols {
             public static final String text = "text";
             public static final String answer_id = "answers_id";
+            public static final String fun = "fun";
         }
 
 

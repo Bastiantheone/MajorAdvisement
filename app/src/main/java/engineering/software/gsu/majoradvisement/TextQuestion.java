@@ -13,11 +13,11 @@ import java.util.ArrayList;
 public class TextQuestion extends Question {
     private String text;
     private ArrayList<Answer> answers;
-    int FunValue = 0;
-    public TextQuestion(String text, int Fun){
+    public TextQuestion(String text, int Fun, int id){
         this.text=text;
         answers = new ArrayList<>(4);
-        FunValue = Fun;
+        super.FunValue = Fun;
+        super.id = id;
     }
 
     public void addAnswer(Answer newAnswer){

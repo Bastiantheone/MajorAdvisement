@@ -36,12 +36,12 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                         " values ( " +
                         "abc , " +
                         "123 , " +
-                        "0 , " +
-                        "0 , " +
-                        "0 , " +
-                        "0 , " +
-                        "0 , " +
-                        "0 );"
+                        0+", " +
+                        0+", " +
+                        0 +", " +
+                        0+" , " +
+                        0+" , " +
+                        0+" );"
 
         );
 
@@ -57,14 +57,16 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Java , 0 , 0 , 8 , 10, 3, 1); "
+                        "values (Java , "+0+" , "+0+" , "+8+" , "+10+", "+3+", "+1+"); "
 
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Snake , 10 , 10 , 1 , 2, 4, 1); "
+                        "values (Snake , "+10+" , "+10+" , "+1+" , "+2+", "+4+", "+1+"); "
         );
+
+        // FIXME Ken: change all integers to be ints not strings like above
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
@@ -152,7 +154,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                         ");"
         );
 
-
+        // FIXME Ken: add images and also add the corresponding answer to the answer table
         /*sqLiteDatabase.execSQL(
 
             Insert the values for the image table
@@ -162,16 +164,16 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(
                 "create table " + gamemaster_Table.swipe_table +
                         "(" + gamemaster_Table.swipe_cols.textLeft +
-                        "," + gamemaster_Table.swipe_cols.textRight +
+                        "," + gamemaster_Table.swipe_cols.textRight +", "+
+                        gamemaster_Table.swipe_cols.answer_id+ ", "+
+                        gamemaster_Table.swipe_cols.fun +
                         ");"
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.swipe_table +
-                        " values ( " + " Computer Science, Information Technology, R.raw.code_image.jpg" +
-                        "" +
-                        ""
-                        + ");"
+                        " values ( " + " Computer Science, Information Technology, "+ R.raw.code_image+", "+
+        ");"// FIXME Kwame: add fun
 
         );
 
@@ -183,10 +185,12 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                         "," + gamemaster_Table.ratequestion_cols.cs +
                         "," + gamemaster_Table.ratequestion_cols.it +
                         "," + gamemaster_Table.ratequestion_cols.is +
-                        "," + gamemaster_Table.ratequestion_cols.ce +
+                        "," + gamemaster_Table.ratequestion_cols.ce +", "+
+                        gamemaster_Table.ratequestion_cols.fun+
                         ");"
         );
 
+        // FIXME Kwame: add fun to all
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.ratequestion_table +
                         " values ( " +
@@ -224,17 +228,19 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(
                 "create table " + gamemaster_Table.textquestion_table +
                         "(" + gamemaster_Table.textquestion_cols.text +
-                        "," + gamemaster_Table.textquestion_cols.answer_id +
+                        "," + gamemaster_Table.textquestion_cols.answer_id +", "+
+                        gamemaster_Table.textquestion_cols.fun+
                         ");"
         );
 
-
+    // FIXME Kwame: add fun to all
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.textquestion_table +
                         " values ( " +
                         "Which one of these are not a programming language? , " +
                         "1 );"
         );
+
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.textquestion_table +

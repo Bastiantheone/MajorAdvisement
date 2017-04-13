@@ -20,17 +20,11 @@ public class QuestionWrapper extends CursorWrapper {
         int ceRating = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.answer_cols.ceRating));
 
         Answer answer1 = new Answer(text, score, csRating, itRating, isRating, ceRating);
-        answer1.getText();
-        answer1.getScore();
-        answer1.getCsRating();
-        answer1.getItRating();
-        answer1.getIsRating();
-        answer1.getCeRating();
         return answer1;
     }
 
 
-    public GM GameMaster() {
+    public GMHolder getGameMaster() {
         String user_name = getString(getColumnIndex(QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name));
         String password = getString(getColumnIndex(QuestionDbSchema.gamemaster_Table.GameMasterCols.password));
         int fun = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.GameMasterCols.fun));
@@ -40,8 +34,7 @@ public class QuestionWrapper extends CursorWrapper {
         int global_is_score = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_is_score));
         int global_ce_score = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_ce_score));
 
-        //GM gm1 = new GM();
-        return null;
+        return new GMHolder(global_score,global_cs_score,global_ce_score,global_it_score,global_is_score,fun,user_name,password);
     }
 
     public Image images() {
@@ -63,17 +56,6 @@ public class QuestionWrapper extends CursorWrapper {
         Image images1 = new Image(imgIDs, leftScore, leftCSRating, leftITRating, leftISRating, leftCERating,
                 rightScore, rightCSRating, rightITRating, rightISRating, rightCERating);
 
-        images1.getImgID();
-        images1.getLeftScore();
-        images1.getLeftCSRating();
-        images1.getLeftITRating();
-        images1.getLeftITRating();
-        images1.getLeftCERating();
-        images1.getRightScore();
-        images1.getRightCSRating();
-        images1.getRightITRating();
-        images1.getRightITRating();
-        images1.getRightCERating();
         return images1;
     }
 
@@ -95,24 +77,20 @@ public class QuestionWrapper extends CursorWrapper {
         int it = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.ratequestion_cols.it));
         int is = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.ratequestion_cols.is));
         int ce = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.ratequestion_cols.ce));
+        int fun = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.ratequestion_cols.fun));
 
-        RateQuestion ratey1 = new RateQuestion(text_rate, score, cs, it, is, ce);
-        ratey1.getText();
-        ratey1.getScore();
-        ratey1.getCs();
-        ratey1.getIt();
-        ratey1.getIs();
-        ratey1.getCe();
+        RateQuestion ratey1 = new RateQuestion(text_rate, score, cs, it, is, ce, fun);
+
         return ratey1;
     }
 
     public TextQuestion texty() {
         String text_text = getString(getColumnIndex(QuestionDbSchema.gamemaster_Table.textquestion_cols.text));
+        int fun = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.textquestion_cols.fun));
         int answer_id = getInt(getColumnIndex(QuestionDbSchema.gamemaster_Table.textquestion_cols.answer_id));
 
-        TextQuestion texty1 = new TextQuestion(text_text, answer_id);
-        texty1.getQuestionText();
-        texty1.getAnswers();
+        TextQuestion texty1 = new TextQuestion(text_text, fun,  answer_id);
+
         return texty1;
     }
 

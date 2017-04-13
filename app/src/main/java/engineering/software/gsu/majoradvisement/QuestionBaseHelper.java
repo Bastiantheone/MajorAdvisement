@@ -57,91 +57,91 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Java' , "+0+" , "+0+" , "+8+" , "+10+", "+3+", "+1+"); "
+                        " values ('Java', "+0+" , "+0+", "+8+", "+10+", "+3+", "+1+"); "
 
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Snake' , "+10+" , "+10+" , "+1+" , "+2+", "+4+", "+1+"); "
+                        " values ('Snake' , "+10+" , "+10+" , "+1+" , "+2+", "+4+", "+1+"); "
         );
 
         // FIXME Ken: change all integers to be ints not strings like above
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Swift' , "+0+" , "+0+" , "+8+" , "+10+" , "+3+", "+1+ "); "
+                        " values ('Swift' , "+0+" , "+0+" , "+8+" , "+10+" , "+3+", "+1+ "); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Ruby' ,"+0+" , "+0+" , "+8+" , "+10+", "+3+", "+1+"); "
-        );
-
-
-        sqLiteDatabase.execSQL(
-                "insert into " + gamemaster_Table.answer_table +
-                        "values ('Linux' , "+0+" , "+6+" , "+0+" , "+4+", "+1+", "+2+"); "
-
-        );
-
-        sqLiteDatabase.execSQL(
-                "insert into " + gamemaster_Table.answer_table +
-                        "values ('Windows' , "+0+" , "+0+" , "+4+" , "+4+", "+1+", "+2+"); "
-        );
-
-        sqLiteDatabase.execSQL(
-                "insert into " + gamemaster_Table.answer_table +
-                        "values ('Firefox' , "+0+" , "+0+" , "+10+" , "+4+", "+7+", "+2+"); "
-        );
-
-        sqLiteDatabase.execSQL(
-                "insert into " + gamemaster_Table.answer_table +
-                        "values ('Unix' , "+0+" , "+6+" , "+0+" , "+4+", "+1+", "+2+"); "
+                        " values ('Ruby' ,"+0+" , "+0+" , "+8+" , "+10+", "+3+", "+1+"); "
         );
 
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Hardware' , "+6+" , "+6+" , "+10+" , "+4+", "+1+", "+3+"); "
+                        " values ('Linux' , "+0+" , "+6+" , "+0+" , "+4+", "+1+", "+2+"); "
 
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Software' , "+6+" , "+10+" , "+4+" , "+4+", "+5+", "+3+"); "
+                        " values ('Windows' , "+0+" , "+0+" , "+4+" , "+4+", "+1+", "+2+"); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Both', "+6+" , "+6+" , "+5+" , "+6+", "+10+", "+3+"); "
+                        " values ('Firefox' , "+0+" , "+0+" , "+10+" , "+4+", "+7+", "+2+"); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Neither' , "+6+" , "+6+" , "+10+" ,"+4+",  "+2+", "+3+"); "
+                        " values ('Unix' , "+0+" , "+6+" , "+0+" , "+4+", "+1+", "+2+"); "
         );
 
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Memory' , "+6+" , "+2+" , "+8+" , "+2+", "+8+", "+4+"); "
+                        " values ('Hardware' , "+6+" , "+6+" , "+10+" , "+4+", "+1+", "+3+"); "
 
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Storage' , "+6+" , "+0+" , "+6+" , "+0+", "+4+", "+4+"); "
+                        " values ('Software' , "+6+" , "+10+" , "+4+" , "+4+", "+5+", "+3+"); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Input', "+6+" , "+2+" , "+0+" , "+0+", "+0+", "+4+"); "
+                        " values ('Both', "+6+" , "+6+" , "+5+" , "+6+", "+10+", "+3+"); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values ('Output', "+10+" , "+2+" , "+0+" , "+0+" , "+0+", "+4+"); "
+                        " values ('Neither' , "+6+" , "+6+" , "+10+" ,"+4+",  "+2+", "+3+"); "
+        );
+
+
+        sqLiteDatabase.execSQL(
+                "insert into " + gamemaster_Table.answer_table +
+                        " values ('Memory' , "+6+" , "+2+" , "+8+" , "+2+", "+8+", "+4+"); "
+
+        );
+
+        sqLiteDatabase.execSQL(
+                "insert into " + gamemaster_Table.answer_table +
+                        " values ('Storage' , "+6+" , "+0+" , "+6+" , "+0+", "+4+", "+4+"); "
+        );
+
+        sqLiteDatabase.execSQL(
+                "insert into " + gamemaster_Table.answer_table +
+                        " values ('Input', "+6+" , "+2+" , "+0+" , "+0+", "+0+", "+4+"); "
+        );
+
+        sqLiteDatabase.execSQL(
+                "insert into " + gamemaster_Table.answer_table +
+                        " values ('Output', "+10+" , "+2+" , "+0+" , "+0+" , "+0+", "+4+"); "
         );
 
 

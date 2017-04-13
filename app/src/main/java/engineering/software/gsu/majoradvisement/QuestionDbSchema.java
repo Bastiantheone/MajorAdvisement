@@ -8,12 +8,12 @@ public class QuestionDbSchema {
 
 
     public static final class gamemaster_Table {
-        public static final String game_master_table = "game_master";
-        public static final String answer_table = "answer_table";
-        public static final String image_table = "image_table";
-        public static final String swipe_table = "swipe_table";
-        public static final String ratequestion_table = "ratequestion_table";
-        public static final String textquestion_table = "textquestion_table";
+        public static final String game_master_table = "game";
+        public static final String answer_table = "answer";
+        public static final String image_table = "image";
+        public static final String swipe_table = "swipe";
+        public static final String ratequestion_table = "ratequestion";
+        public static final String textquestion_table = "textquestion";
 
 
         public static final class GameMasterCols {
@@ -60,7 +60,7 @@ public class QuestionDbSchema {
             public static final String textLeft = "textLeft";
             public static final String textRight = "textRight";
             public static final String fun = "fun";
-            public static final String answer_id = "answers_id";
+            public static final String answers_id = "answers_id";
             public static final String focus = "focus";
         }
 

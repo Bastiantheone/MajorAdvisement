@@ -1,6 +1,7 @@
 package engineering.software.gsu.majoradvisement;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ public class GM {
     public List<Question> questCE = new ArrayList<Question>();
 
     public static Question currentQuestion;
+    private static final String TAG = "Game Master";
 
     //Use it to pull the next Question from the Array lists, uses combination of 2 methods
     //
@@ -50,7 +52,7 @@ public class GM {
         List<Question> focus = new ArrayList<Question>();
         Random random = new Random();
         int randomNum = random.nextInt(total) + 1 ;
-
+        Log.d(TAG, "nextQuestion: "+randomNum+" and total "+total);
         if (randomNum <= fCS){
             focus = questCS;
         }
@@ -79,6 +81,10 @@ public class GM {
                 return dummy;
             }
         }
+        if(dummy == null){
+            // FIXME
+        }
+        Log.d(TAG, "fetchQuestion: focus: "+focus.size());
         currentQuestion = dummy;
         return dummy;
     }

@@ -129,7 +129,7 @@ public class DbConnect {
         }
         cursor.close();
 
-        String whereS = QuestionDbSchema.gamemaster_Table.swipe_cols
+        String whereS = QuestionDbSchema.gamemaster_Table.swipe_cols.focus + where;
         cursor = querySwipes(whereS,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){

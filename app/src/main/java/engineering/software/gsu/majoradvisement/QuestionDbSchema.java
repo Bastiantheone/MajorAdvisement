@@ -60,7 +60,7 @@ public class QuestionDbSchema {
             public static final String textLeft = "textLeft";
             public static final String textRight = "textRight";
             public static final String fun = "fun";
-            public static final String answer_id = "answers_id";
+            public static final String answers_id = "answers_id";
         }
 
         public static final class ratequestion_cols {

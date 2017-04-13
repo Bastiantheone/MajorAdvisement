@@ -3,6 +3,7 @@ package engineering.software.gsu.majoradvisement;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.ContactsContract;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -108,7 +109,7 @@ public class DbConnect {
         QuestionWrapper cursor = queryRateQestion(null,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
-            Question question = cursor.ratey();
+            RateQuestion question = cursor.ratey();
             questions.add(question);
             cursor.moveToNext();
         }
@@ -117,8 +118,18 @@ public class DbConnect {
         cursor = queryTextQuestion(null,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
-            Question question = cursor.texty();
-            getAnswer(question.id);
+            TextQuestion question = cursor.texty();
+            question.addAnswers(getAnswers(question.id));
+            questions.add(question);
+            cursor.moveToNext();
+        }
+        cursor.close();
+
+        cursor = querySwipes(null,null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            SwipeQuestion question = cursor.swipey();
+            question.addImages(getImages(question.id));
             questions.add(question);
             cursor.moveToNext();
         }
@@ -126,11 +137,31 @@ public class DbConnect {
 
         return questions;
     }
-    private Answer getAnswer(int id){
-        
+    private List<Answer> getAnswers(int id){
+        List<Answer> answers = new ArrayList<>(4);
+        String where = QuestionDbSchema.gamemaster_Table.answer_cols.answer_id + " = "+id;
+        QuestionWrapper cursor = queryAnswers(where,null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            Answer answer = cursor.getAnswer();
+            answers.add(answer);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return answers;
     }
-    // FIXME
-
-
+    private List<Image>getImages(int id){
+        List<Image> images = new ArrayList<>(2);
+        String where = QuestionDbSchema.gamemaster_Table.image_cols.answers_id+ " = "+id;//is going to get added
+        QuestionWrapper cursor = queryImages(where,null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            Image image = cursor.images();
+            images.add(image);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return images;
+    }
 }
 

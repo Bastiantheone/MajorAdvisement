@@ -50,6 +50,6 @@ public class RateActivity extends AppCompatActivity {
     }
 
     public void next(){
-        GM.initialize().nextQuestion().display(this);
+        GM.initialize(this).nextQuestion().display(this);
     }
 }

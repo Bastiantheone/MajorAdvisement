@@ -1,5 +1,7 @@
 package engineering.software.gsu.majoradvisement;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -27,10 +29,10 @@ public class GM {
     //Use it to pull the next Question from the Array lists, uses combination of 2 methods
     //
 
-    public static GM initialize(){
+    public static GM initialize(Context context){
         if(Alpha == null){
             Alpha = new GM();
-            Alpha.loadQuestions();
+            Alpha.loadQuestions(context);
         }
         else{
             return Alpha;
@@ -40,6 +42,7 @@ public class GM {
 
     private GM(){};
 
+    // FIXME when it stops display the score
     public Question nextQuestion(){
         Question Selection = new Question();
         int total = fCS + fIT + fIS + fCE;
@@ -82,11 +85,11 @@ public class GM {
     //This is where some sort of 'loading' method will go, will create a hardcode example to run this
     //section of the code
 
-    public void loadQuestions(){
+    public void loadQuestions(Context context){
         // Method for loading would go in here, you'd create an array list of questions and answers and feed them into each other and then
         //make the master list and edit the individual questions based on format
-        //the usuage of it after the method is completed would be in the MyApplication.java class in order to allow us to edit it on initialization
-
+        //the usage of it after the method is completed would be in the MyApplication.java class in order to allow us to edit it on initialization
+        DbConnect.get(context).getQuestion();// FIXME gets the question like this, needs to add them to the array and start the first one
         //set the first question
     }
 

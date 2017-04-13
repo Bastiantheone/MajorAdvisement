@@ -1,5 +1,7 @@
 package engineering.software.gsu.majoradvisement;
 
+import android.content.Context;
+
 /**
  * Created by Bastian Wieck on 4/13/2017.
  */
@@ -19,7 +21,7 @@ public class GMHolder {
         this.password = password;
     }
 
-    public GM initializeGM(String password){
+    public GM initializeGM(String password, Context context){
         if(this.password.equals(password)){
             GM.globalScore = score;
             GM.globalISScore = is;
@@ -27,7 +29,7 @@ public class GMHolder {
             GM.globalCsScore = cs;
             GM.globalITScore = it;
             GM.funValue = fun;
-            return GM.initialize();
+            return GM.initialize(context);
         }else{
             return null;
         }

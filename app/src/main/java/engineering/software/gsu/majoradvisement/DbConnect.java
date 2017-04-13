@@ -104,9 +104,12 @@ public class DbConnect {
         return new QuestionWrapper(cursor);
     }
 
-    public List<Question> getQuestion(){
+    public List<Question> getQuestion(int focus){
+        String where = " = "+focus;
+        // FIXME add Focus column
+        String whereR = QuestionDbSchema.gamemaster_Table.ratequestion_cols.focus + where;
         List<Question> questions = new ArrayList<>();
-        QuestionWrapper cursor = queryRateQestion(null,null);
+        QuestionWrapper cursor = queryRateQestion(whereR,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             RateQuestion question = cursor.ratey();
@@ -115,7 +118,8 @@ public class DbConnect {
         }
         cursor.close();
 
-        cursor = queryTextQuestion(null,null);
+        String whereT = QuestionDbSchema.gamemaster_Table.textquestion_cols.focus + where;
+        cursor = queryTextQuestion(whereT,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             TextQuestion question = cursor.texty();
@@ -125,7 +129,8 @@ public class DbConnect {
         }
         cursor.close();
 
-        cursor = querySwipes(null,null);
+        String whereS = QuestionDbSchema.gamemaster_Table.swipe_cols
+        cursor = querySwipes(whereS,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             SwipeQuestion question = cursor.swipey();
@@ -162,6 +167,20 @@ public class DbConnect {
         }
         cursor.close();
         return images;
+    }
+
+    public GMHolder getGM(String username, String password){
+        String where = QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name+" = "+username+
+                " AND "+ QuestionDbSchema.gamemaster_Table.GameMasterCols.password+" = "+password;
+        QuestionWrapper cursor = queryAnswers(where,null);
+        cursor.moveToFirst();
+        GMHolder gm = null;
+        while (!cursor.isAfterLast()){
+            gm = cursor.getGameMaster();
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return gm;
     }
 }
 

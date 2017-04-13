@@ -45,8 +45,8 @@ public class RateActivity extends AppCompatActivity {
     }
 
     public int calcScore(int score, float rating){
-        float a = Math.abs(score-rating);
-        return (int)((5 - a)*2);
+        float a = Math.abs(score-rating*2);
+        return (int)(10-a);
     }
 
     public void next(){

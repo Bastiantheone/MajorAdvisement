@@ -10,17 +10,6 @@ public class Image  {
 
     private Answer leftAnswer;
     private Answer rightAnswer;
-    /*private int leftScore;
-    private int leftCSRating;
-    private int leftITRating;
-    private int leftISRating;
-    private int leftCERating;
-
-    private int rightScore;
-    private int rightCSRating;
-    private int rightITRating;
-    private int rightISRating;
-    private int rightCERating;*/
 
     public Image(int imgID, int leftScore, int leftCSRating, int leftITRating, int leftISRating, int leftCERating,
                  int rightScore, int rightCSRating, int rightITRating, int rightISRating, int rightCERating){
@@ -28,16 +17,6 @@ public class Image  {
         this.leftAnswer = new Answer(imgID + "", leftScore, leftCSRating, leftITRating, leftISRating, leftCERating);
         this.rightAnswer= new Answer(imgID + "", rightScore, rightCSRating, rightITRating, rightISRating, rightCERating);
 
-        /*this.leftScore = leftScore;
-        this.leftCSRating = leftCSRating;
-        this.leftITRating = leftITRating;
-        this.leftISRating = leftISRating;
-        this.leftCERating = leftCERating;
-        this.rightScore = rightScore;
-        this.rightCSRating = rightCSRating;
-        this.rightITRating = rightITRating;
-        this.rightISRating = rightISRating;
-        this.rightCERating = rightCERating;*/
 
     }
 

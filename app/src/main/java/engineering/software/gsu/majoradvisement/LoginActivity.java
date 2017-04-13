@@ -25,7 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GMHolder holder = DbConnect.get(activity).getGM(usernameBox.getText().toString(),passwordBox.getText().toString());
+                //GM.initialize(activity).nextQuestion().display(activity);
+               GMHolder holder = DbConnect.get(activity).getGM(usernameBox.getText().toString(),passwordBox.getText().toString());
                 if(holder!=null){
                     holder.initializeGM(passwordBox.getText().toString(),activity).nextQuestion().display(activity);
                 }else{

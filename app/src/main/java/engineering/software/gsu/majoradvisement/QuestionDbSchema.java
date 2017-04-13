@@ -18,7 +18,7 @@ public class QuestionDbSchema {
 
         public static final class GameMasterCols {
 
-            public static final String user_name = "user_name";
+            public static final String user_name = "username";
             public static final String password = "password";
             public static final String fun = "fun";
             public static final String global_score = "global_score";
@@ -69,7 +69,7 @@ public class QuestionDbSchema {
             public static final String score = "score";
             public static final String cs = "cs";
             public static final String it = "it";
-            public static final String is = "is";
+            public static final String is = "is1";
             public static final String ce = "ce";
             public static final String fun = "fun";
             public static final String focus = "focus";

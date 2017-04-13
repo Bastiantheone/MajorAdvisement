@@ -1,6 +1,7 @@
 package engineering.software.gsu.majoradvisement;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -29,7 +30,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                         "," + gamemaster_Table.GameMasterCols.global_score + ");"
 
         );
-
+/*
         sqLiteDatabase.execSQL(
 
                 "insert into " + gamemaster_Table.game_master_table +
@@ -44,6 +45,19 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                         0+" );"
 
         );
+*/
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(gamemaster_Table.GameMasterCols.user_name,"abc");
+        contentValues.put(gamemaster_Table.GameMasterCols.password,"123");
+        contentValues.put(gamemaster_Table.GameMasterCols.fun,0);
+        contentValues.put(gamemaster_Table.GameMasterCols.global_score,0);
+        contentValues.put(gamemaster_Table.GameMasterCols.global_cs_score,0);
+        contentValues.put(gamemaster_Table.GameMasterCols.global_it_score,0);
+        contentValues.put(gamemaster_Table.GameMasterCols.global_is_score,0);
+        contentValues.put(gamemaster_Table.GameMasterCols.global_ce_score,0);
+        sqLiteDatabase.insert(gamemaster_Table.game_master_table, null,contentValues);
+
+
 
         sqLiteDatabase.execSQL(
                 "create table " + gamemaster_Table.answer_table +
@@ -52,7 +66,8 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                         "," + gamemaster_Table.answer_cols.csRating +
                         "," + gamemaster_Table.answer_cols.itRating +
                         "," + gamemaster_Table.answer_cols.isRating +
-                        "," + gamemaster_Table.answer_cols.ceRating + ");"
+                        "," + gamemaster_Table.answer_cols.ceRating +
+                        "," + gamemaster_Table.answer_cols.answer_id + ");"
         );
 
         sqLiteDatabase.execSQL(
@@ -173,7 +188,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.swipe_table +
-                        " values ( " + " 'Computer Science', 'Information Technology', "+ R.raw.code_image+", "+
+                        " values ( " + " 'Computer Science', 'Information Technology', "+ R.raw.code_image+ "," + R.raw.hardware_image +
         ");"// FIXME Kwame: add fun
 
         );
@@ -187,7 +202,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                         "," + gamemaster_Table.ratequestion_cols.it +
                         "," + gamemaster_Table.ratequestion_cols.is +
                         "," + gamemaster_Table.ratequestion_cols.ce +", "+
-                        gamemaster_Table.ratequestion_cols.fun+
+                        gamemaster_Table.ratequestion_cols.fun+ "," +gamemaster_Table.ratequestion_cols.focus +
                         ");"
         );
 
@@ -230,7 +245,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                 "create table " + gamemaster_Table.textquestion_table +
                         "(" + gamemaster_Table.textquestion_cols.text +
                         "," + gamemaster_Table.textquestion_cols.answer_id +", "+
-                        gamemaster_Table.textquestion_cols.fun+
+                        gamemaster_Table.textquestion_cols.fun+ ", " + gamemaster_Table.textquestion_cols.focus +
                         ");"
         );
 

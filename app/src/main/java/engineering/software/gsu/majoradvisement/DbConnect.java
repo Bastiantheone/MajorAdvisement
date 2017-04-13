@@ -170,9 +170,9 @@ public class DbConnect {
     }
 
     public GMHolder getGM(String username, String password){
-        String where = QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name+" = "+username+
-                " AND "+ QuestionDbSchema.gamemaster_Table.GameMasterCols.password+" = "+password;
-        QuestionWrapper cursor = queryAnswers(where,null);
+        String where = QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name+" = '"+username+"'"+
+                " AND "+ QuestionDbSchema.gamemaster_Table.GameMasterCols.password+" = '"+password+"'";
+        QuestionWrapper cursor = queryGamemaster(where,null);
         cursor.moveToFirst();
         GMHolder gm = null;
         while (!cursor.isAfterLast()){

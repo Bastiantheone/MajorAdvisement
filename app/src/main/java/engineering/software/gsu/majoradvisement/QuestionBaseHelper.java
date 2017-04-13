@@ -34,8 +34,8 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
 
                 "insert into " + gamemaster_Table.game_master_table +
                         " values ( " +
-                        "abc , " +
-                        "123 , " +
+                        "'abc' , " +
+                        "'123' , " +
                         0+", " +
                         0+", " +
                         0 +", " +
@@ -57,91 +57,91 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Java , "+0+" , "+0+" , "+8+" , "+10+", "+3+", "+1+"); "
+                        "values ('Java' , "+0+" , "+0+" , "+8+" , "+10+", "+3+", "+1+"); "
 
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Snake , "+10+" , "+10+" , "+1+" , "+2+", "+4+", "+1+"); "
+                        "values ('Snake' , "+10+" , "+10+" , "+1+" , "+2+", "+4+", "+1+"); "
         );
 
         // FIXME Ken: change all integers to be ints not strings like above
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Swift , 0 , 0 , 8 , 10, 3, 1); "
+                        "values ('Swift' , "+0+" , "+0+" , "+8+" , "+10+" , "+3+", "+1+ "); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Ruby , 0 , 0 , 8 , 10, 3, 1); "
-        );
-
-
-        sqLiteDatabase.execSQL(
-                "insert into " + gamemaster_Table.answer_table +
-                        "values (Linux , 0 , 6 , 0 , 4, 1, 2); "
-
-        );
-
-        sqLiteDatabase.execSQL(
-                "insert into " + gamemaster_Table.answer_table +
-                        "values (Windows , 0 , 0 , 4 , 4, 1, 2); "
-        );
-
-        sqLiteDatabase.execSQL(
-                "insert into " + gamemaster_Table.answer_table +
-                        "values (Firefox , 0 , 0 , 10 , 4, 7, 2); "
-        );
-
-        sqLiteDatabase.execSQL(
-                "insert into " + gamemaster_Table.answer_table +
-                        "values (Unix , 0 , 6 , 0 , 4, 1, 2); "
+                        "values ('Ruby' ,"+0+" , "+0+" , "+8+" , "+10+", "+3+", "+1+"); "
         );
 
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Hardware , 6 , 6 , 10 , 4, 1, 3); "
+                        "values ('Linux' , "+0+" , "+6+" , "+0+" , "+4+", "+1+", "+2+"); "
 
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Software , 6 , 10 , 4 , 4, 5, 3); "
+                        "values ('Windows' , "+0+" , "+0+" , "+4+" , "+4+", "+1+", "+2+"); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Both, 6 , 6 , 5 , 4, 10, 3); "
+                        "values ('Firefox' , "+0+" , "+0+" , "+10+" , "+4+", "+7+", "+2+"); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Neither , 6 , 6 , 10 , 4, , 3); "
+                        "values ('Unix' , "+0+" , "+6+" , "+0+" , "+4+", "+1+", "+2+"); "
         );
 
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Memory , 6 , 2 , 8 , 2, 8, 4); "
+                        "values ('Hardware' , "+6+" , "+6+" , "+10+" , "+4+", "+1+", "+3+"); "
 
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Storage , 6 , 0 , 6 , 0, 4, 4); "
+                        "values ('Software' , "+6+" , "+10+" , "+4+" , "+4+", "+5+", "+3+"); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Input, 6 , 2 , 0 , 0, 0, 4); "
+                        "values ('Both', "+6+" , "+6+" , "+5+" , "+6+", "+10+", "+3+"); "
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.answer_table +
-                        "values (Output, 10 , 2 , 0 , 0 , 0, 4); "
+                        "values ('Neither' , "+6+" , "+6+" , "+10+" ,"+4+",  "+2+", "+3+"); "
+        );
+
+
+        sqLiteDatabase.execSQL(
+                "insert into " + gamemaster_Table.answer_table +
+                        "values ('Memory' , "+6+" , "+2+" , "+8+" , "+2+", "+8+", "+4+"); "
+
+        );
+
+        sqLiteDatabase.execSQL(
+                "insert into " + gamemaster_Table.answer_table +
+                        "values ('Storage' , "+6+" , "+0+" , "+6+" , "+0+", "+4+", "+4+"); "
+        );
+
+        sqLiteDatabase.execSQL(
+                "insert into " + gamemaster_Table.answer_table +
+                        "values ('Input', "+6+" , "+2+" , "+0+" , "+0+", "+0+", "+4+"); "
+        );
+
+        sqLiteDatabase.execSQL(
+                "insert into " + gamemaster_Table.answer_table +
+                        "values ('Output', "+10+" , "+2+" , "+0+" , "+0+" , "+0+", "+4+"); "
         );
 
 
@@ -151,6 +151,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                         "(" + gamemaster_Table.image_cols.leftAnswer +
                         "," + gamemaster_Table.image_cols.rightAnswer +
                         "," + gamemaster_Table.image_cols.imgID +
+                        "," + gamemaster_Table.image_cols.answers_id +
                         ");"
         );
 
@@ -172,7 +173,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.swipe_table +
-                        " values ( " + " Computer Science, Information Technology, "+ R.raw.code_image+", "+
+                        " values ( " + " 'Computer Science', 'Information Technology', "+ R.raw.code_image+", "+
         ");"// FIXME Kwame: add fun
 
         );
@@ -194,8 +195,8 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.ratequestion_table +
                         " values ( " +
-                        "How would you rate your math skills?,  " +
-                        "6, 7, 3, 0, 10 );"
+                        "'How would you rate your math skills?',  " +
+                        "6"+ "," + "7" +"," +3+ "," + 0 + "," +10+ "," +1+ "," +1+  ");"
 
         );
 
@@ -203,24 +204,24 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.ratequestion_table +
                         " values ( " +
-                        "How would you rate your critical thinking skills?,  " +
-                        "6, 7, 3, 0, 10 );"
+                        "'How would you rate your critical thinking skills?',  " +
+                        6 +","+ 7+","+ 3+"," +0+","+ 10+"," +2+ "," +2+ " );"
 
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.ratequestion_table +
                         " values ( " +
-                        "How often do you do you build technology related items?,  " +
-                        "6, 7, 3, 0, 10 );"
+                        "'How often do you do you build technology related items?',  " +
+                        6+ "," + 7+ "," + 3+ "," +0+ "," +10+ "," +3 + "," +3+ " );"
 
         );
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.ratequestion_table +
                         " values ( " +
-                        "How often do you program computers?,  " +
-                        "6, 7, 3, 0, 10 );"
+                        "'How often do you program computers?',  " +
+                        6+ "," + 7+ "," + 3+ "," + 0+ "," +10+","+ 4+ "," +4+ ");"
 
         );
 
@@ -237,28 +238,28 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.textquestion_table +
                         " values ( " +
-                        "Which one of these are not a programming language? , " +
-                        "1 );"
+                        "'Which one of these are not a programming language?' , " +
+                        "1, 1, 1 );"
         );
 
 
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.textquestion_table +
                         " values ( " +
-                        "Which one of these are not an Operating System? , " +
-                        "2 );"
+                        "'Which one of these are not an Operating System?' , " +
+                        "2,2,3 );"
         );
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.textquestion_table +
                         " values ( " +
-                        "Would you rather work with the hardware or the software components of a computer? , " +
-                        "3 );"
+                        "'Would you rather work with the hardware or the software components of a computer?' , " +
+                        "3,3,4 );"
         );
         sqLiteDatabase.execSQL(
                 "insert into " + gamemaster_Table.textquestion_table +
                         " values ( " +
-                        "____ is the area of a computer that temporarily holds data that is waiting to be processed, stored, or output? , " +
-                        "4 );"
+                        "'____ is the area of a computer that temporarily holds data that is waiting to be processed, stored, or output?' , " +
+                        "4,4,2 );"
         );
 
 

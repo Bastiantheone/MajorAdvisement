@@ -51,7 +51,7 @@ public class QuestionDbSchema {
             public static final String rightITRating = "rightITRating";
             public static final String rightISRating = "rightISRating";
             public static final String rightCERating = "rightCERating";
-
+            public static final String answers_id = "answers_id";
 
             //Maybe finished IDK yet check back in the Image.java class
         }
@@ -61,6 +61,7 @@ public class QuestionDbSchema {
             public static final String textRight = "textRight";
             public static final String fun = "fun";
             public static final String answer_id = "answers_id";
+            public static final String focus = "focus";
         }
 
         public static final class ratequestion_cols {
@@ -71,12 +72,14 @@ public class QuestionDbSchema {
             public static final String is = "is";
             public static final String ce = "ce";
             public static final String fun = "fun";
+            public static final String focus = "focus";
         }
 
         public static final class textquestion_cols {
             public static final String text = "text";
             public static final String answer_id = "answers_id";
             public static final String fun = "fun";
+            public static final String focus = "focus";
         }
 
 

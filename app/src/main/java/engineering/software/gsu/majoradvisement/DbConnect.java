@@ -106,7 +106,6 @@ public class DbConnect {
 
     public List<Question> getQuestion(int focus){
         String where = " = "+focus;
-        // FIXME add Focus column
         String whereR = QuestionDbSchema.gamemaster_Table.ratequestion_cols.focus + where;
         List<Question> questions = new ArrayList<>();
         QuestionWrapper cursor = queryRateQestion(whereR,null);
@@ -172,7 +171,7 @@ public class DbConnect {
     public GMHolder getGM(String username, String password){
         String where = QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name+" = "+username+
                 " AND "+ QuestionDbSchema.gamemaster_Table.GameMasterCols.password+" = "+password;
-        QuestionWrapper cursor = queryAnswers(where,null);
+        QuestionWrapper cursor = queryGamemaster(where,null);
         cursor.moveToFirst();
         GMHolder gm = null;
         while (!cursor.isAfterLast()){

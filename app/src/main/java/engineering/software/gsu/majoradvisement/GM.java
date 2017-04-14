@@ -73,20 +73,19 @@ public class GM {
     }
 
     public Question fetchQuestion(List<Question> focus, int fun){
-        Question dummy = new Question();
-
+        // enough fun, time for the score activity
+        if(fun >= 20)
+            return null;
         for(int i = 0; i < focus.size(); i++){
             if(fun == focus.get(i).FunValue){
-                dummy = focus.get(i);
+                Question dummy = focus.get(i);
+                currentQuestion = dummy;
                 return dummy;
             }
         }
-        if(dummy == null){
-            // FIXME
-        }
         Log.d(TAG, "fetchQuestion: focus: "+focus.size());
-        currentQuestion = dummy;
-        return dummy;
+        // if dummy == null then the activity will call Score activity
+        return null;
     }
 
     //This is where some sort of 'loading' method will go, will create a hardcode example to run this

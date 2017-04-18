@@ -58,6 +58,7 @@ public class ScoreActivity extends AppCompatActivity {
         }
 
         graph = (GraphView)findViewById(R.id.graph);
+
         BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[]{
                 new DataPoint(1,gm.globalCsScore),
                 new DataPoint(2,gm.globalCEScore),
@@ -83,5 +84,6 @@ public class ScoreActivity extends AppCompatActivity {
         // add labels
         StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
         staticLabelsFormatter.setHorizontalLabels(new String[]{"CS","CE","IT","IS"});
+        graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
     }
 }

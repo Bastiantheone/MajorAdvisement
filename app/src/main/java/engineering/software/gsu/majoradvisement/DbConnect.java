@@ -106,7 +106,6 @@ public class DbConnect {
 
     public List<Question> getQuestion(int focus){
         String where = " = "+focus;
-        // FIXME add Focus column
         String whereR = QuestionDbSchema.gamemaster_Table.ratequestion_cols.focus + where;
         List<Question> questions = new ArrayList<>();
         QuestionWrapper cursor = queryRateQestion(whereR,null);
@@ -157,7 +156,7 @@ public class DbConnect {
     }
     private List<Image>getImages(int id){
         List<Image> images = new ArrayList<>(2);
-        String where = QuestionDbSchema.gamemaster_Table.image_cols.answers_id+ " = "+id;//is going to get added
+        String where = QuestionDbSchema.gamemaster_Table.image_cols.answers_id+ " = "+id;
         QuestionWrapper cursor = queryImages(where,null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){

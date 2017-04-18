@@ -45,13 +45,13 @@ public class GM {
 
     private GM(){};
 
-    // FIXME when it stops display the score
     public Question nextQuestion(){
-        Question Selection = new Question();
+        // FIXME figure out a good way to increase fun. Also save GM to database on finish or logout
+        funValue+=1;
         int total = fCS + fIT + fIS + fCE;
         List<Question> focus = new ArrayList<Question>();
         Random random = new Random();
-        int randomNum = random.nextInt(total) + 1 ;
+        int randomNum = random.nextInt(total+ 1);
         Log.d(TAG, "nextQuestion: "+randomNum+" and total "+total);
         if (randomNum <= fCS){
             focus = questCS;
@@ -66,14 +66,14 @@ public class GM {
             focus = questCE;
         }
 
-        Selection = fetchQuestion(focus, funValue);
+        Question Selection = fetchQuestion(focus, funValue);
 
 
         return Selection;
     }
 
     public Question fetchQuestion(List<Question> focus, int fun){
-        // enough fun, time for the score activity
+        // enough fun, time for the score activity FIXME decide on a good fun value to stop, maybe reset fun in score activity
         if(fun >= 20)
             return null;
         for(int i = 0; i < focus.size(); i++){

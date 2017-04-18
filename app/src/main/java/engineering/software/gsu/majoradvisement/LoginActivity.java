@@ -1,6 +1,7 @@
 package engineering.software.gsu.majoradvisement;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,13 @@ public class LoginActivity extends AppCompatActivity {
                 //GM.initialize(activity).nextQuestion().display(activity);
                GMHolder holder = DbConnect.get(activity).getGM(usernameBox.getText().toString(),passwordBox.getText().toString());
                 if(holder!=null){
-                    holder.initializeGM(passwordBox.getText().toString(),activity).nextQuestion().display(activity);
+                    Question q = holder.initializeGM(passwordBox.getText().toString(),activity).nextQuestion();
+                    if(q!=null)
+                        q.display(activity);
+                    else{
+                        Intent intent = new Intent(activity,ScoreActivity.class);
+                        startActivity(intent);
+                    }
                 }else{
                     Toast.makeText(activity,"Wrong username or password",Toast.LENGTH_SHORT).show();
                 }

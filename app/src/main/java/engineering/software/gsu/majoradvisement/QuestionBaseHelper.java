@@ -18,6 +18,8 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        // FIXME add enough questions so that each focus has all fun values
+
         sqLiteDatabase.execSQL(
                 "create table " + gamemaster_Table.game_master_table +
                         "(" + gamemaster_Table.GameMasterCols.user_name +
@@ -62,6 +64,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues1.put(gamemaster_Table.answer_cols.isRating, 10);
         contentValues1.put(gamemaster_Table.answer_cols.ceRating, 3);
         contentValues1.put(gamemaster_Table.answer_cols.answer_id, 1);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues1);
 
 
         ContentValues contentValues2 = new ContentValues();
@@ -72,6 +75,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues2.put(gamemaster_Table.answer_cols.isRating, 2);
         contentValues2.put(gamemaster_Table.answer_cols.ceRating, 4);
         contentValues2.put(gamemaster_Table.answer_cols.answer_id, 1);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues2);
 
         ContentValues contentValues3 = new ContentValues();
         contentValues3.put(gamemaster_Table.answer_cols.text, "Swift");
@@ -81,6 +85,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues3.put(gamemaster_Table.answer_cols.isRating, 10);
         contentValues3.put(gamemaster_Table.answer_cols.ceRating, 3);
         contentValues3.put(gamemaster_Table.answer_cols.answer_id, 1);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues3);
 
 
         ContentValues contentValues4 = new ContentValues();
@@ -91,6 +96,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues4.put(gamemaster_Table.answer_cols.isRating, 10);
         contentValues4.put(gamemaster_Table.answer_cols.ceRating, 3);
         contentValues4.put(gamemaster_Table.answer_cols.answer_id, 1);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues4);
 
         ContentValues contentValues5 = new ContentValues();
         contentValues5.put(gamemaster_Table.answer_cols.text, "Linux");
@@ -100,6 +106,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues5.put(gamemaster_Table.answer_cols.isRating, 4);
         contentValues5.put(gamemaster_Table.answer_cols.ceRating, 1);
         contentValues5.put(gamemaster_Table.answer_cols.answer_id, 2);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues5);
 
         ContentValues contentValues6 = new ContentValues();
         contentValues6.put(gamemaster_Table.answer_cols.text, "Windows");
@@ -109,6 +116,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues6.put(gamemaster_Table.answer_cols.isRating, 4);
         contentValues6.put(gamemaster_Table.answer_cols.ceRating, 1);
         contentValues6.put(gamemaster_Table.answer_cols.answer_id, 2);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues6);
 
 
         ContentValues contentValues7 = new ContentValues();
@@ -119,6 +127,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues7.put(gamemaster_Table.answer_cols.isRating, 4);
         contentValues7.put(gamemaster_Table.answer_cols.ceRating, 7);
         contentValues7.put(gamemaster_Table.answer_cols.answer_id, 2);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues7);
 
         ContentValues contentValues8 = new ContentValues();
         contentValues8.put(gamemaster_Table.answer_cols.text, "Unix");
@@ -128,6 +137,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues8.put(gamemaster_Table.answer_cols.isRating, 4);
         contentValues8.put(gamemaster_Table.answer_cols.ceRating, 1);
         contentValues8.put(gamemaster_Table.answer_cols.answer_id, 2);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues8);
 
         ContentValues contentValues9 = new ContentValues();
         contentValues9.put(gamemaster_Table.answer_cols.text, "Hardware");
@@ -137,6 +147,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues9.put(gamemaster_Table.answer_cols.isRating, 4);
         contentValues9.put(gamemaster_Table.answer_cols.ceRating, 1);
         contentValues9.put(gamemaster_Table.answer_cols.answer_id, 3);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues9);
 
         ContentValues contentValues10 = new ContentValues();
         contentValues10.put(gamemaster_Table.answer_cols.text, "Software");
@@ -146,6 +157,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues10.put(gamemaster_Table.answer_cols.isRating, 4);
         contentValues10.put(gamemaster_Table.answer_cols.ceRating, 5);
         contentValues10.put(gamemaster_Table.answer_cols.answer_id, 3);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues10);
 
         ContentValues contentValues11 = new ContentValues();
         contentValues11.put(gamemaster_Table.answer_cols.text, "Both");
@@ -155,6 +167,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues11.put(gamemaster_Table.answer_cols.isRating, 6);
         contentValues11.put(gamemaster_Table.answer_cols.ceRating, 10);
         contentValues11.put(gamemaster_Table.answer_cols.answer_id, 3);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues11);
 
         ContentValues contentValues12 = new ContentValues();
         contentValues12.put(gamemaster_Table.answer_cols.text, "Neither");
@@ -164,6 +177,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues12.put(gamemaster_Table.answer_cols.isRating, 4);
         contentValues12.put(gamemaster_Table.answer_cols.ceRating, 2);
         contentValues12.put(gamemaster_Table.answer_cols.answer_id, 3);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues12);
 
         ContentValues contentValues13 = new ContentValues();
         contentValues13.put(gamemaster_Table.answer_cols.text, "Memory");
@@ -173,6 +187,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues13.put(gamemaster_Table.answer_cols.isRating, 2);
         contentValues13.put(gamemaster_Table.answer_cols.ceRating, 8);
         contentValues13.put(gamemaster_Table.answer_cols.answer_id, 4);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues13);
 
         ContentValues contentValues14 = new ContentValues();
         contentValues14.put(gamemaster_Table.answer_cols.text, "Storage");
@@ -182,6 +197,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues14.put(gamemaster_Table.answer_cols.isRating, 0);
         contentValues14.put(gamemaster_Table.answer_cols.ceRating, 4);
         contentValues14.put(gamemaster_Table.answer_cols.answer_id, 4);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues14);
 
         ContentValues contentValues15 = new ContentValues();
         contentValues15.put(gamemaster_Table.answer_cols.text, "Input");
@@ -191,6 +207,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues15.put(gamemaster_Table.answer_cols.isRating, 0);
         contentValues15.put(gamemaster_Table.answer_cols.ceRating, 0);
         contentValues15.put(gamemaster_Table.answer_cols.answer_id, 4);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues15);
 
         ContentValues contentValues16 = new ContentValues();
         contentValues16.put(gamemaster_Table.answer_cols.text, "Output");
@@ -200,6 +217,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues16.put(gamemaster_Table.answer_cols.isRating, 0);
         contentValues16.put(gamemaster_Table.answer_cols.ceRating, 0);
         contentValues16.put(gamemaster_Table.answer_cols.answer_id, 4);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues16);
 
         //do an insert statement for each answer for each question
         sqLiteDatabase.execSQL(
@@ -223,15 +241,18 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
                         "(" + gamemaster_Table.swipe_cols.textLeft +
                         "," + gamemaster_Table.swipe_cols.textRight + ", " +
                         gamemaster_Table.swipe_cols.answers_id + ", " +
-                        gamemaster_Table.swipe_cols.fun +
+                        gamemaster_Table.swipe_cols.fun +", "+
+                        gamemaster_Table.swipe_cols.focus+
                         ");"
         );
 
-        ContentValues contentValues17 = new ContentValues();
+        // FIXME
+        /*ContentValues contentValues17 = new ContentValues();
         contentValues17.put(gamemaster_Table.swipe_cols.textLeft, "Computer Science");
         contentValues17.put(gamemaster_Table.swipe_cols.textRight, "Information Technology");
         contentValues17.put(gamemaster_Table.swipe_cols.answers_id, R.raw.code_image);
         contentValues17.put(gamemaster_Table.swipe_cols.fun, R.raw.hardware_image);
+        sqLiteDatabase.insert(gamemaster_Table.swipe_table, null, contentValues17);*/
 
 
         sqLiteDatabase.execSQL(
@@ -255,6 +276,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues18.put(gamemaster_Table.ratequestion_cols.ce, 10);
         contentValues18.put(gamemaster_Table.ratequestion_cols.fun, 1);
         contentValues18.put(gamemaster_Table.ratequestion_cols.focus, 1);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues18);
 
         ContentValues contentValues19 = new ContentValues();
         contentValues19.put(gamemaster_Table.ratequestion_cols.text, "How would you rate your critical thinking skills?'");
@@ -265,6 +287,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues19.put(gamemaster_Table.ratequestion_cols.ce, 10);
         contentValues19.put(gamemaster_Table.ratequestion_cols.fun, 1);
         contentValues19.put(gamemaster_Table.ratequestion_cols.focus, 2);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues19);
 
         ContentValues contentValues20 = new ContentValues();
         contentValues20.put(gamemaster_Table.ratequestion_cols.text, "How often do you do you build technology related items?");
@@ -275,6 +298,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues20.put(gamemaster_Table.ratequestion_cols.ce, 10);
         contentValues20.put(gamemaster_Table.ratequestion_cols.fun, 3);
         contentValues20.put(gamemaster_Table.ratequestion_cols.focus, 3);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues20);
 
         ContentValues contentValues21 = new ContentValues();
         contentValues21.put(gamemaster_Table.ratequestion_cols.text, "How often do you program computers?");
@@ -285,6 +309,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues21.put(gamemaster_Table.ratequestion_cols.ce, 10);
         contentValues21.put(gamemaster_Table.ratequestion_cols.fun, 4);
         contentValues21.put(gamemaster_Table.ratequestion_cols.focus, 4);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues21);
 
 
         sqLiteDatabase.execSQL(
@@ -301,6 +326,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues22.put(gamemaster_Table.textquestion_cols.answer_id, 1);
         contentValues22.put(gamemaster_Table.textquestion_cols.fun, 1);
         contentValues22.put(gamemaster_Table.textquestion_cols.focus, 1);
+        sqLiteDatabase.insert(gamemaster_Table.textquestion_table, null, contentValues22);
 
 
         ContentValues contentValues23 = new ContentValues();
@@ -308,18 +334,21 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues23.put(gamemaster_Table.textquestion_cols.answer_id, 2);
         contentValues23.put(gamemaster_Table.textquestion_cols.fun, 2);
         contentValues23.put(gamemaster_Table.textquestion_cols.focus, 3);
+        sqLiteDatabase.insert(gamemaster_Table.textquestion_table, null, contentValues23);
 
         ContentValues contentValues24 = new ContentValues();
         contentValues24.put(gamemaster_Table.textquestion_cols.text, "Would you rather work with the hardware or the software components of a computer?");
         contentValues24.put(gamemaster_Table.textquestion_cols.answer_id, 3);
         contentValues24.put(gamemaster_Table.textquestion_cols.fun, 3);
         contentValues24.put(gamemaster_Table.textquestion_cols.focus, 4);
+        sqLiteDatabase.insert(gamemaster_Table.textquestion_table, null, contentValues24);
 
         ContentValues contentValues25 = new ContentValues();
         contentValues25.put(gamemaster_Table.textquestion_cols.text, "____ is the area of a computer that temporarily holds data that is waiting to be processed, stored, or output?");
         contentValues25.put(gamemaster_Table.textquestion_cols.answer_id, 4);
         contentValues25.put(gamemaster_Table.textquestion_cols.fun, 4);
         contentValues25.put(gamemaster_Table.textquestion_cols.focus, 2);
+        sqLiteDatabase.insert(gamemaster_Table.textquestion_table, null, contentValues25);
 
     }
 

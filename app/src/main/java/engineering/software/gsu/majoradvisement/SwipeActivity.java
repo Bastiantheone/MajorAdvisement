@@ -80,6 +80,12 @@ public class SwipeActivity extends AppCompatActivity {
     }
 
     public void next(){
-        GM.initialize(this).nextQuestion().display(this);
+        Question q = GM.initialize(this).nextQuestion();
+        if(q!=null)
+            q.display(this);
+        else{
+            Intent intent = new Intent(this,ScoreActivity.class);
+            startActivity(intent);
+        }
     }
 }

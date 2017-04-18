@@ -6,12 +6,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class RateActivity extends AppCompatActivity {
+    private static final String TAG = "RateActivity";
     private Button nextButton;
     private RatingBar ratingBar;
     private TextView textView;
@@ -38,7 +40,7 @@ public class RateActivity extends AppCompatActivity {
                 GM.globalITScore+=calcScore(rateQuestion.getIt(),rating);
                 GM.globalISScore+=calcScore(rateQuestion.getIs(),rating);
                 GM.globalCEScore+=calcScore(rateQuestion.getCe(),rating);
-
+                Log.d(TAG, "onClick: Cs:"+calcScore(rateQuestion.getCs(),rating)+ " IT: "+calcScore(rateQuestion.getIt(),rating));
                 next();
             }
         });
@@ -57,5 +59,10 @@ public class RateActivity extends AppCompatActivity {
             Intent intent = new Intent(this,ScoreActivity.class);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void onBackPressed(){
+        //do nothing
     }
 }

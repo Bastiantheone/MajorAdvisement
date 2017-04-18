@@ -88,4 +88,9 @@ public class SwipeActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+    @Override
+    public void onBackPressed(){
+        //do nothing
+    }
 }

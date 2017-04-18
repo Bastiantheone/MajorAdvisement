@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+// FIXME add registration option use insertGameMaster from DbConnect to insert the new user
 public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
     private Activity activity;
@@ -41,5 +42,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed(){
+        //do nothing
     }
 }

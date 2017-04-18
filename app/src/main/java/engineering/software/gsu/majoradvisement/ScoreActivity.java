@@ -13,6 +13,7 @@ import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 
+// FIXME add Continue and Logout option, also save GM to database using updateGameMaster in DbConnect
 public class ScoreActivity extends AppCompatActivity {
     private GraphView graph;
     private TextView scoreTextView;
@@ -85,5 +86,10 @@ public class ScoreActivity extends AppCompatActivity {
         StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(graph);
         staticLabelsFormatter.setHorizontalLabels(new String[]{"CS","CE","IT","IS"});
         graph.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
+    }
+
+    @Override
+    public void onBackPressed(){
+        //do nothing
     }
 }

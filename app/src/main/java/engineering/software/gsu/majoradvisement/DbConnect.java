@@ -1,5 +1,6 @@
 package engineering.software.gsu.majoradvisement;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,7 +13,7 @@ import java.util.List;
 /**
  * Created by Bastian Wieck on 4/13/2017.
  */
-
+// FIXME add Insert new Game Master option
 public class DbConnect {
     private static DbConnect dbConnect;
     private Context context;
@@ -180,6 +181,33 @@ public class DbConnect {
         }
         cursor.close();
         return gm;
+    }
+
+    public void insertGameMaster(GMHolder gmHolder){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.fun,gmHolder.fun);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_ce_score,gmHolder.ce);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_cs_score,gmHolder.cs);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_is_score,gmHolder.is);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_it_score,gmHolder.it);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_score,gmHolder.score);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name,gmHolder.username);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.password,gmHolder.password);
+        mDatabase.insert(QuestionDbSchema.gamemaster_Table.game_master_table,null,contentValues);
+    }
+
+    public void updateGameMaster(GMHolder gmHolder){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.fun,gmHolder.fun);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_ce_score,gmHolder.ce);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_cs_score,gmHolder.cs);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_is_score,gmHolder.is);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_it_score,gmHolder.it);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.global_score,gmHolder.score);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name,gmHolder.username);
+        contentValues.put(QuestionDbSchema.gamemaster_Table.GameMasterCols.password,gmHolder.password);
+        String where = "where "+QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name+" = '"+gmHolder.username+"'";
+        mDatabase.update(QuestionDbSchema.gamemaster_Table.game_master_table,contentValues,where,null);
     }
 }
 

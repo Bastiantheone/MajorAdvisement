@@ -19,7 +19,7 @@ import java.util.Random;
 
 public class GM {
     public static int globalScore, globalCsScore, globalITScore, globalISScore, globalCEScore;
-    public static int funValue, fCS, fIT, fIS, fCE;
+    public static int funValue;
     private static GM Alpha;
     public List<Question> questCS = new ArrayList<Question>();
     public List<Question> questIT = new ArrayList<Question>();
@@ -46,23 +46,23 @@ public class GM {
     private GM(){};
 
     public Question nextQuestion(){
-        // FIXME figure out a good way to increase fun. Also save GM to database on finish or logout
         funValue+=1;
-        int total = fCS + fIT + fIS + fCE;
+        int total = globalCsScore + globalITScore + globalISScore + globalCEScore;
         List<Question> focus = new ArrayList<Question>();
         Random random = new Random();
-        int randomNum = random.nextInt(total+ 1);
+        int randomNum = random.nextInt(total+1);
         Log.d(TAG, "nextQuestion: "+randomNum+" and total "+total);
-        if (randomNum <= fCS){
+        if (randomNum <= globalCsScore){
             focus = questCS;
+            Log.d(TAG, "nextQuestion: CS Focus");
         }
-        else if(randomNum < (fCS + fIT)){
+        else if(randomNum < (globalCsScore + globalITScore)){
             focus = questIT;
         }
-        else if(randomNum < (fCS + fIT + fIS)){
+        else if(randomNum < (globalCsScore + globalITScore + globalISScore)){
             focus = questIS;
         }
-        else if(randomNum <= (fCS + fIT + fIS + fCE)){
+        else if(randomNum <= (globalCsScore + globalITScore + globalISScore + globalCEScore)){
             focus = questCE;
         }
 
@@ -76,16 +76,20 @@ public class GM {
         // enough fun, time for the score activity FIXME decide on a good fun value to stop, maybe reset fun in score activity
         if(fun >= 20)
             return null;
+        List<Question>possibleQuestions = new ArrayList<>();
         for(int i = 0; i < focus.size(); i++){
             if(fun == focus.get(i).FunValue){
                 Question dummy = focus.get(i);
-                currentQuestion = dummy;
-                return dummy;
+                possibleQuestions.add(dummy);
             }
         }
-        Log.d(TAG, "fetchQuestion: focus: "+focus.size());
-        // if dummy == null then the activity will call Score activity
-        return null;
+        Log.d(TAG, "fetchQuestion: possible Questions:"+possibleQuestions.size());
+        if(possibleQuestions.size()==0)return null;
+        Random random = new Random();
+        int r = random.nextInt(possibleQuestions.size());
+        Question q = possibleQuestions.get(r);
+        currentQuestion = q;
+        return q;
     }
 
     //This is where some sort of 'loading' method will go, will create a hardcode example to run this

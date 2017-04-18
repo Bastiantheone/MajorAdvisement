@@ -209,5 +209,17 @@ public class DbConnect {
         String where = "where "+QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name+" = '"+gmHolder.username+"'";
         mDatabase.update(QuestionDbSchema.gamemaster_Table.game_master_table,contentValues,where,null);
     }
+
+    public boolean checkUsername(String username){
+        boolean valid = true;
+        String where = QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name+" = '"+username+"'";
+        QuestionWrapper cursor = queryGamemaster(where,null);
+        if(cursor.getCount()<1){
+            valid = false;
+        }
+        cursor.close();
+        return valid;
+    }
+
 }
 

@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 // FIXME add registration option use insertGameMaster from DbConnect to insert the new user
 public class LoginActivity extends AppCompatActivity {
-    private Button loginButton;
+    private Button loginButton, register_button;
     private Activity activity;
     private EditText usernameBox;
     private EditText passwordBox;
@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = (Button)findViewById(R.id.login_button);
         usernameBox = (EditText)findViewById(R.id.username_input);
         passwordBox = (EditText)findViewById(R.id.password_input);
+        register_button = (Button)findViewById(R.id.register_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,6 +41,12 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(activity,"Wrong username or password",Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        register_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
     }

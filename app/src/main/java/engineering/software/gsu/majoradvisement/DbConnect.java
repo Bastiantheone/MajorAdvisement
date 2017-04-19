@@ -214,10 +214,14 @@ public class DbConnect {
         boolean valid = true;
         String where = QuestionDbSchema.gamemaster_Table.GameMasterCols.user_name+" = '"+username+"'";
         QuestionWrapper cursor = queryGamemaster(where,null);
-        if(cursor.getCount()<1){
-            valid = false;
+        cursor.moveToFirst();
+        GMHolder gm = null;
+        while (!cursor.isAfterLast()){
+            gm = cursor.getGameMaster();
+            cursor.moveToNext();
         }
         cursor.close();
+        if(gm!=null)valid = false;
         return valid;
     }
 

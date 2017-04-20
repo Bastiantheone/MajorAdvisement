@@ -38,22 +38,26 @@ public class RegisterActivity extends AppCompatActivity {
                     //if username isnt taken, then make username and password as what the user puts in
                     username = username_editText.getText().toString();
                     password = password_editText.getText().toString();
-                    //creates a GMHolder with the username and password
-                    GMHolder holder = new GMHolder(0,0,0,0,0,-1,username,password);
-                    //inserts the information to the database
-                    dbc.insertGameMaster(holder);
+                    if(username.equals("")||password.equals("")){
+                        Toast.makeText(RegisterActivity.this,"You can't leave it blank",Toast.LENGTH_SHORT).show();
+                    }else {
+                        //creates a GMHolder with the username and password
+                        GMHolder holder = new GMHolder(0, 0, 0, 0, 0, -1, username, password);
+                        //inserts the information to the database
+                        dbc.insertGameMaster(holder);
 
-                    //start the quiz
-                    GMHolder gmHolder = DbConnect.get(activity).getGM(username,password);
-                    if(gmHolder!=null){
-                        Question q = holder.initializeGM(password,activity).nextQuestion();
-                        if(q!=null)
-                            q.display(activity);
-                        else{
-                            Toast.makeText(activity,"Something went wrong",Toast.LENGTH_SHORT).show();
+                        //start the quiz
+                        GMHolder gmHolder = DbConnect.get(activity).getGM(username, password);
+                        if (gmHolder != null) {
+                            Question q = holder.initializeGM(password, activity).nextQuestion();
+                            if (q != null)
+                                q.display(activity);
+                            else {
+                                Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show();
                         }
-                    }else{
-                        Toast.makeText(activity,"Something went wrong",Toast.LENGTH_SHORT).show();
                     }
                 }
                 else {

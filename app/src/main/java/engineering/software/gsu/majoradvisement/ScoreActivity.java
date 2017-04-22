@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -18,6 +20,8 @@ public class ScoreActivity extends AppCompatActivity {
     private GraphView graph;
     private TextView scoreTextView;
     private TextView linkTextView;
+    private Button logoutButton;
+    private Button continueButton;
     private GM gm;
 
     @Override
@@ -26,9 +30,32 @@ public class ScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_score);
         gm  = GM.initialize(this);
 
+        DbConnect.get(this).updateGameMaster(gm);
+
         scoreTextView = (TextView)findViewById(R.id.score_text_view);
         String text = "Score: "+gm.globalScore ;
         scoreTextView.setText(text);
+
+        logoutButton=(Button)findViewById(R.id.logout_button);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ScoreActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // start over but skip the initial which major question
+        continueButton=(Button)findViewById(R.id.continue_button);
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gm.funValue = 0;
+                Question q = gm.nextQuestion();
+                if(q!=null)
+                    q.display(ScoreActivity.this);
+            }
+        });
 
         linkTextView = (TextView)findViewById(R.id.link_to_major_view);
         linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -69,7 +96,6 @@ public class ScoreActivity extends AppCompatActivity {
         graph.addSeries(series);
 
         // set Color depending on the height and position
-        // FIXME change color settings
         series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
             @Override
             public int get(DataPoint data) {

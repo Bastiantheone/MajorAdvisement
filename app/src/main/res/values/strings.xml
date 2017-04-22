@@ -4,6 +4,8 @@
     <string name="swipe_instruction">Swipe to the corresponding side</string>
     <string name="upper_img">Upper Image</string>
     <string name="lower_img">Lower Image</string>
+    <string name="logout">Logout</string>
+    <string name="continue_string">Continue</string>
 
     <string name="cs_link"><a href="http://ceit.georgiasouthern.edu/cs/degrees/bscs/">Computer Science</a></string>
     <string name="ce_link"><a href="https://en.wikipedia.org/wiki/Computer_engineering">Computer Engineering</a></string>

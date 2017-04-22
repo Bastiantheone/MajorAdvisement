@@ -20,6 +20,8 @@ import java.util.Random;
 public class GM {
     public static int globalScore, globalCsScore, globalITScore, globalISScore, globalCEScore;
     public static int funValue;
+    public static String username;
+    protected static String password;
     private static GM Alpha;
     public List<Question> questCS = new ArrayList<Question>();
     public List<Question> questIT = new ArrayList<Question>();

@@ -9,7 +9,7 @@ import android.content.Context;
 public class GMHolder {
     public int score, cs, ce, it, is, fun;
     public String username;
-    public String password;
+    protected String password;
     public GMHolder(int score, int cs, int ce, int it, int is, int fun, String username, String password){
         this.score = score;
         this.cs = cs;
@@ -29,6 +29,8 @@ public class GMHolder {
             GM.globalCsScore = cs;
             GM.globalITScore = it;
             GM.funValue = fun;
+            GM.username=username;
+            GM.password=password;
             return GM.initialize(context);
         }else{
             return null;

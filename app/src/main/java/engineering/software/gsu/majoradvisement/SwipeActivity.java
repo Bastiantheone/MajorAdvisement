@@ -93,4 +93,10 @@ public class SwipeActivity extends AppCompatActivity {
     public void onBackPressed(){
         //do nothing
     }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        DbConnect.get(this).updateGameMaster(GM.initialize(this));
+    }
 }

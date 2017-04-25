@@ -305,84 +305,84 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues41);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.answer_cols.answer_id,7);
-        contentValues.put(gamemaster_Table.answer_cols.text,"Design Computer Systems and Components");
-        contentValues.put(gamemaster_Table.answer_cols.score,5);
-        contentValues.put(gamemaster_Table.answer_cols.itRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.isRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.ceRating,10);
-        contentValues.put(gamemaster_Table.answer_cols.csRating,0);
-        sqLiteDatabase.insert(gamemaster_Table.answer_table,null,contentValues);
+        contentValues.put(gamemaster_Table.answer_cols.answer_id, 7);
+        contentValues.put(gamemaster_Table.answer_cols.text, "Design Computer Systems and Components");
+        contentValues.put(gamemaster_Table.answer_cols.score, 5);
+        contentValues.put(gamemaster_Table.answer_cols.itRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.isRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.ceRating, 10);
+        contentValues.put(gamemaster_Table.answer_cols.csRating, 0);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.answer_cols.answer_id,7);
-        contentValues.put(gamemaster_Table.answer_cols.text,"Design and implement software systems");
-        contentValues.put(gamemaster_Table.answer_cols.score,5);
-        contentValues.put(gamemaster_Table.answer_cols.itRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.isRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.ceRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.csRating,10);
-        sqLiteDatabase.insert(gamemaster_Table.answer_table,null,contentValues);
+        contentValues.put(gamemaster_Table.answer_cols.answer_id, 7);
+        contentValues.put(gamemaster_Table.answer_cols.text, "Design and implement software systems");
+        contentValues.put(gamemaster_Table.answer_cols.score, 5);
+        contentValues.put(gamemaster_Table.answer_cols.itRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.isRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.ceRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.csRating, 10);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.answer_cols.answer_id,7);
-        contentValues.put(gamemaster_Table.answer_cols.text,"Design Computer Systems with a business focus");
-        contentValues.put(gamemaster_Table.answer_cols.score,5);
-        contentValues.put(gamemaster_Table.answer_cols.itRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.isRating,10);
-        contentValues.put(gamemaster_Table.answer_cols.ceRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.csRating,0);
-        sqLiteDatabase.insert(gamemaster_Table.answer_table,null,contentValues);
+        contentValues.put(gamemaster_Table.answer_cols.answer_id, 7);
+        contentValues.put(gamemaster_Table.answer_cols.text, "Design Computer Systems with a business focus");
+        contentValues.put(gamemaster_Table.answer_cols.score, 5);
+        contentValues.put(gamemaster_Table.answer_cols.itRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.isRating, 10);
+        contentValues.put(gamemaster_Table.answer_cols.ceRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.csRating, 0);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.answer_cols.answer_id,7);
-        contentValues.put(gamemaster_Table.answer_cols.text,"Maintain infrastructure");
-        contentValues.put(gamemaster_Table.answer_cols.score,5);
-        contentValues.put(gamemaster_Table.answer_cols.itRating,10);
-        contentValues.put(gamemaster_Table.answer_cols.isRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.ceRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.csRating,0);
-        sqLiteDatabase.insert(gamemaster_Table.answer_table,null,contentValues);
+        contentValues.put(gamemaster_Table.answer_cols.answer_id, 7);
+        contentValues.put(gamemaster_Table.answer_cols.text, "Maintain infrastructure");
+        contentValues.put(gamemaster_Table.answer_cols.score, 5);
+        contentValues.put(gamemaster_Table.answer_cols.itRating, 10);
+        contentValues.put(gamemaster_Table.answer_cols.isRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.ceRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.csRating, 0);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.answer_cols.answer_id,8);
-        contentValues.put(gamemaster_Table.answer_cols.text,"The money gained");
-        contentValues.put(gamemaster_Table.answer_cols.score,0);
-        contentValues.put(gamemaster_Table.answer_cols.itRating,5);
-        contentValues.put(gamemaster_Table.answer_cols.isRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.ceRating,5);
-        contentValues.put(gamemaster_Table.answer_cols.csRating,5);
-        sqLiteDatabase.insert(gamemaster_Table.answer_table,null,contentValues);
+        contentValues.put(gamemaster_Table.answer_cols.answer_id, 8);
+        contentValues.put(gamemaster_Table.answer_cols.text, "The money gained");
+        contentValues.put(gamemaster_Table.answer_cols.score, 0);
+        contentValues.put(gamemaster_Table.answer_cols.itRating, 5);
+        contentValues.put(gamemaster_Table.answer_cols.isRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.ceRating, 5);
+        contentValues.put(gamemaster_Table.answer_cols.csRating, 5);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.answer_cols.answer_id,8);
-        contentValues.put(gamemaster_Table.answer_cols.text,"Same as profit");
-        contentValues.put(gamemaster_Table.answer_cols.score,0);
-        contentValues.put(gamemaster_Table.answer_cols.itRating,5);
-        contentValues.put(gamemaster_Table.answer_cols.isRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.ceRating,5);
-        contentValues.put(gamemaster_Table.answer_cols.csRating,5);
-        sqLiteDatabase.insert(gamemaster_Table.answer_table,null,contentValues);
+        contentValues.put(gamemaster_Table.answer_cols.answer_id, 8);
+        contentValues.put(gamemaster_Table.answer_cols.text, "Same as profit");
+        contentValues.put(gamemaster_Table.answer_cols.score, 0);
+        contentValues.put(gamemaster_Table.answer_cols.itRating, 5);
+        contentValues.put(gamemaster_Table.answer_cols.isRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.ceRating, 5);
+        contentValues.put(gamemaster_Table.answer_cols.csRating, 5);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.answer_cols.answer_id,8);
-        contentValues.put(gamemaster_Table.answer_cols.text,"The money coming in from selling stuff");
-        contentValues.put(gamemaster_Table.answer_cols.score,10);
-        contentValues.put(gamemaster_Table.answer_cols.itRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.isRating,5);
-        contentValues.put(gamemaster_Table.answer_cols.ceRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.csRating,0);
-        sqLiteDatabase.insert(gamemaster_Table.answer_table,null,contentValues);
+        contentValues.put(gamemaster_Table.answer_cols.answer_id, 8);
+        contentValues.put(gamemaster_Table.answer_cols.text, "The money coming in from selling stuff");
+        contentValues.put(gamemaster_Table.answer_cols.score, 10);
+        contentValues.put(gamemaster_Table.answer_cols.itRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.isRating, 5);
+        contentValues.put(gamemaster_Table.answer_cols.ceRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.csRating, 0);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.answer_cols.answer_id,8);
-        contentValues.put(gamemaster_Table.answer_cols.text,"How much money the company is worth");
-        contentValues.put(gamemaster_Table.answer_cols.score,0);
-        contentValues.put(gamemaster_Table.answer_cols.itRating,5);
-        contentValues.put(gamemaster_Table.answer_cols.isRating,0);
-        contentValues.put(gamemaster_Table.answer_cols.ceRating,5);
-        contentValues.put(gamemaster_Table.answer_cols.csRating,5);
-        sqLiteDatabase.insert(gamemaster_Table.answer_table,null,contentValues);
+        contentValues.put(gamemaster_Table.answer_cols.answer_id, 8);
+        contentValues.put(gamemaster_Table.answer_cols.text, "How much money the company is worth");
+        contentValues.put(gamemaster_Table.answer_cols.score, 0);
+        contentValues.put(gamemaster_Table.answer_cols.itRating, 5);
+        contentValues.put(gamemaster_Table.answer_cols.isRating, 0);
+        contentValues.put(gamemaster_Table.answer_cols.ceRating, 5);
+        contentValues.put(gamemaster_Table.answer_cols.csRating, 5);
+        sqLiteDatabase.insert(gamemaster_Table.answer_table, null, contentValues);
 
         //do an insert statement for each answer for each question
         sqLiteDatabase.execSQL(
@@ -405,40 +405,139 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues26 = new ContentValues();
         contentValues26.put(gamemaster_Table.image_cols.answers_id, 1);
         contentValues26.put(gamemaster_Table.image_cols.imgID, R.raw.code_image);
-        contentValues26.put(gamemaster_Table.image_cols.leftAnswer,10);
-        contentValues26.put(gamemaster_Table.image_cols.leftCERating,1);
-        contentValues26.put(gamemaster_Table.image_cols.leftCSRating,10);
-        contentValues26.put(gamemaster_Table.image_cols.leftISRating,0);
-        contentValues26.put(gamemaster_Table.image_cols.leftITRating,1);
-        contentValues26.put(gamemaster_Table.image_cols.rightAnswer,0);
-        contentValues26.put(gamemaster_Table.image_cols.rightCSRating,0);
-        contentValues26.put(gamemaster_Table.image_cols.rightCERating,4);
-        contentValues26.put(gamemaster_Table.image_cols.rightITRating,3);
-        contentValues26.put(gamemaster_Table.image_cols.rightISRating,7);
-        sqLiteDatabase.insert(gamemaster_Table.image_table,null,contentValues26);
+        contentValues26.put(gamemaster_Table.image_cols.leftAnswer, 10);
+        contentValues26.put(gamemaster_Table.image_cols.leftCERating, 1);
+        contentValues26.put(gamemaster_Table.image_cols.leftCSRating, 10);
+        contentValues26.put(gamemaster_Table.image_cols.leftISRating, 0);
+        contentValues26.put(gamemaster_Table.image_cols.leftITRating, 1);
+        contentValues26.put(gamemaster_Table.image_cols.rightAnswer, 0);
+        contentValues26.put(gamemaster_Table.image_cols.rightCSRating, 0);
+        contentValues26.put(gamemaster_Table.image_cols.rightCERating, 4);
+        contentValues26.put(gamemaster_Table.image_cols.rightITRating, 3);
+        contentValues26.put(gamemaster_Table.image_cols.rightISRating, 7);
+        sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues26);
 
         ContentValues contentValues27 = new ContentValues();
         contentValues27.put(gamemaster_Table.image_cols.answers_id, 1);
         contentValues27.put(gamemaster_Table.image_cols.imgID, R.raw.hardware_image);
-        contentValues27.put(gamemaster_Table.image_cols.leftAnswer,0);
-        contentValues27.put(gamemaster_Table.image_cols.leftCERating,0);
-        contentValues27.put(gamemaster_Table.image_cols.leftCSRating,4);
-        contentValues27.put(gamemaster_Table.image_cols.leftISRating,6);
-        contentValues27.put(gamemaster_Table.image_cols.leftITRating,0);
-        contentValues27.put(gamemaster_Table.image_cols.rightAnswer,10);
-        contentValues27.put(gamemaster_Table.image_cols.rightCSRating,5);
-        contentValues27.put(gamemaster_Table.image_cols.rightCERating,8);
-        contentValues27.put(gamemaster_Table.image_cols.rightITRating,10);
-        contentValues27.put(gamemaster_Table.image_cols.rightISRating,0);
-        sqLiteDatabase.insert(gamemaster_Table.image_table,null,contentValues27);
+        contentValues27.put(gamemaster_Table.image_cols.leftAnswer, 0);
+        contentValues27.put(gamemaster_Table.image_cols.leftCERating, 0);
+        contentValues27.put(gamemaster_Table.image_cols.leftCSRating, 4);
+        contentValues27.put(gamemaster_Table.image_cols.leftISRating, 6);
+        contentValues27.put(gamemaster_Table.image_cols.leftITRating, 0);
+        contentValues27.put(gamemaster_Table.image_cols.rightAnswer, 10);
+        contentValues27.put(gamemaster_Table.image_cols.rightCSRating, 5);
+        contentValues27.put(gamemaster_Table.image_cols.rightCERating, 8);
+        contentValues27.put(gamemaster_Table.image_cols.rightITRating, 10);
+        contentValues27.put(gamemaster_Table.image_cols.rightISRating, 0);
+        sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues27);
+
+        ContentValues contentValues51 = new ContentValues();
+        contentValues51.put(gamemaster_Table.image_cols.answers_id, 2);
+        contentValues51.put(gamemaster_Table.image_cols.imgID, R.raw.casual_clothes);
+        contentValues51.put(gamemaster_Table.image_cols.leftAnswer, 10);
+        contentValues51.put(gamemaster_Table.image_cols.leftCERating, 1);
+        contentValues51.put(gamemaster_Table.image_cols.leftCSRating, 10);
+        contentValues51.put(gamemaster_Table.image_cols.leftISRating, 0);
+        contentValues51.put(gamemaster_Table.image_cols.leftITRating, 1);
+        contentValues51.put(gamemaster_Table.image_cols.rightAnswer, 0);
+        contentValues51.put(gamemaster_Table.image_cols.rightCSRating, 0);
+        contentValues51.put(gamemaster_Table.image_cols.rightCERating, 4);
+        contentValues51.put(gamemaster_Table.image_cols.rightITRating, 3);
+        contentValues51.put(gamemaster_Table.image_cols.rightISRating, 7);
+        sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues51);
+
+        ContentValues contentValues52 = new ContentValues();
+        contentValues52.put(gamemaster_Table.image_cols.answers_id, 2);
+        contentValues52.put(gamemaster_Table.image_cols.imgID, R.raw.suit_clothes);
+        contentValues52.put(gamemaster_Table.image_cols.leftAnswer, 10);
+        contentValues52.put(gamemaster_Table.image_cols.leftCERating, 5);
+        contentValues52.put(gamemaster_Table.image_cols.leftCSRating, 7);
+        contentValues52.put(gamemaster_Table.image_cols.leftISRating, 6);
+        contentValues52.put(gamemaster_Table.image_cols.leftITRating, 0);
+        contentValues52.put(gamemaster_Table.image_cols.rightAnswer, 0);
+        contentValues52.put(gamemaster_Table.image_cols.rightCSRating, 0);
+        contentValues52.put(gamemaster_Table.image_cols.rightCERating, 5);
+        contentValues52.put(gamemaster_Table.image_cols.rightITRating, 2);
+        contentValues52.put(gamemaster_Table.image_cols.rightISRating, 8);
+        sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues52);
+
+
+        ContentValues contentValues53 = new ContentValues();
+        contentValues53.put(gamemaster_Table.image_cols.answers_id, 3);
+        contentValues53.put(gamemaster_Table.image_cols.imgID, R.raw.big_business);
+        contentValues53.put(gamemaster_Table.image_cols.leftAnswer, 10);
+        contentValues53.put(gamemaster_Table.image_cols.leftCERating, 1);
+        contentValues53.put(gamemaster_Table.image_cols.leftCSRating, 10);
+        contentValues53.put(gamemaster_Table.image_cols.leftISRating, 0);
+        contentValues53.put(gamemaster_Table.image_cols.leftITRating, 1);
+        contentValues53.put(gamemaster_Table.image_cols.rightAnswer, 0);
+        contentValues53.put(gamemaster_Table.image_cols.rightCSRating, 0);
+        contentValues53.put(gamemaster_Table.image_cols.rightCERating, 4);
+        contentValues53.put(gamemaster_Table.image_cols.rightITRating, 3);
+        contentValues53.put(gamemaster_Table.image_cols.rightISRating, 7);
+        sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues53);
+
+        ContentValues contentValues54 = new ContentValues();
+        contentValues54.put(gamemaster_Table.image_cols.answers_id, 3);
+        contentValues54.put(gamemaster_Table.image_cols.imgID, R.raw.small_business);
+        contentValues54.put(gamemaster_Table.image_cols.leftAnswer, 10);
+        contentValues54.put(gamemaster_Table.image_cols.leftCERating, 5);
+        contentValues54.put(gamemaster_Table.image_cols.leftCSRating, 7);
+        contentValues54.put(gamemaster_Table.image_cols.leftISRating, 6);
+        contentValues54.put(gamemaster_Table.image_cols.leftITRating, 0);
+        contentValues54.put(gamemaster_Table.image_cols.rightAnswer, 0);
+        contentValues54.put(gamemaster_Table.image_cols.rightCSRating, 0);
+        contentValues54.put(gamemaster_Table.image_cols.rightCERating, 5);
+        contentValues54.put(gamemaster_Table.image_cols.rightITRating, 2);
+        contentValues54.put(gamemaster_Table.image_cols.rightISRating, 8);
+        sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues54);
+
+        ContentValues contentValues55 = new ContentValues();
+        contentValues55.put(gamemaster_Table.image_cols.answers_id, 4);
+        contentValues55.put(gamemaster_Table.image_cols.imgID, R.raw.front_end);
+        contentValues55.put(gamemaster_Table.image_cols.leftAnswer, 10);
+        contentValues55.put(gamemaster_Table.image_cols.leftCERating, 1);
+        contentValues55.put(gamemaster_Table.image_cols.leftCSRating, 10);
+        contentValues55.put(gamemaster_Table.image_cols.leftISRating, 0);
+        contentValues55.put(gamemaster_Table.image_cols.leftITRating, 1);
+        contentValues55.put(gamemaster_Table.image_cols.rightAnswer, 0);
+        contentValues55.put(gamemaster_Table.image_cols.rightCSRating, 0);
+        contentValues55.put(gamemaster_Table.image_cols.rightCERating, 4);
+        contentValues55.put(gamemaster_Table.image_cols.rightITRating, 3);
+        contentValues55.put(gamemaster_Table.image_cols.rightISRating, 7);
+        sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues55);
+
+        ContentValues contentValues56 = new ContentValues();
+        contentValues56.put(gamemaster_Table.image_cols.answers_id, 4);
+        contentValues56.put(gamemaster_Table.image_cols.imgID, R.raw.back_end);
+        contentValues56.put(gamemaster_Table.image_cols.leftAnswer, 10);
+        contentValues56.put(gamemaster_Table.image_cols.leftCERating, 5);
+        contentValues56.put(gamemaster_Table.image_cols.leftCSRating, 7);
+        contentValues56.put(gamemaster_Table.image_cols.leftISRating, 6);
+        contentValues56.put(gamemaster_Table.image_cols.leftITRating, 0);
+        contentValues56.put(gamemaster_Table.image_cols.rightAnswer, 0);
+        contentValues56.put(gamemaster_Table.image_cols.rightCSRating, 0);
+        contentValues56.put(gamemaster_Table.image_cols.rightCERating, 5);
+        contentValues56.put(gamemaster_Table.image_cols.rightITRating, 2);
+        contentValues56.put(gamemaster_Table.image_cols.rightISRating, 8);
+        sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues56);
+
+
+
+
+
+
+
+
 
         sqLiteDatabase.execSQL(
                 "create table " + gamemaster_Table.swipe_table +
                         "(" + gamemaster_Table.swipe_cols.textLeft +
                         "," + gamemaster_Table.swipe_cols.textRight + ", " +
                         gamemaster_Table.swipe_cols.answers_id + ", " +
-                        gamemaster_Table.swipe_cols.fun +", "+
-                        gamemaster_Table.swipe_cols.focus+
+                        gamemaster_Table.swipe_cols.fun + ", " +
+                        gamemaster_Table.swipe_cols.focus +
                         ");"
         );
 
@@ -457,6 +556,31 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues17.put(gamemaster_Table.swipe_cols.fun, 2);
         contentValues17.put(gamemaster_Table.swipe_cols.focus, CS_FOCUS);
         sqLiteDatabase.insert(gamemaster_Table.swipe_table, null, contentValues17);
+
+
+        ContentValues contentValues101 = new ContentValues();
+        contentValues101.put(gamemaster_Table.swipe_cols.textLeft, "Like");
+        contentValues101.put(gamemaster_Table.swipe_cols.textRight, "Dislike");
+        contentValues101.put(gamemaster_Table.swipe_cols.answers_id, 2);
+        contentValues101.put(gamemaster_Table.swipe_cols.fun, 3);
+        contentValues101.put(gamemaster_Table.swipe_cols.focus, CS_FOCUS);
+        sqLiteDatabase.insert(gamemaster_Table.swipe_table, null, contentValues101);
+
+        ContentValues contentValues100 = new ContentValues();
+        contentValues100.put(gamemaster_Table.swipe_cols.textLeft, "Like");
+        contentValues100.put(gamemaster_Table.swipe_cols.textRight, "Dislike");
+        contentValues100.put(gamemaster_Table.swipe_cols.answers_id, 3);
+        contentValues100.put(gamemaster_Table.swipe_cols.fun, 4);
+        contentValues100.put(gamemaster_Table.swipe_cols.focus, CS_FOCUS);
+        sqLiteDatabase.insert(gamemaster_Table.swipe_table, null, contentValues100);
+
+        ContentValues contentValues50 = new ContentValues();
+        contentValues50.put(gamemaster_Table.swipe_cols.textLeft, "Like");
+        contentValues50.put(gamemaster_Table.swipe_cols.textRight, "Dislike");
+        contentValues50.put(gamemaster_Table.swipe_cols.answers_id, 4);
+        contentValues50.put(gamemaster_Table.swipe_cols.fun, 1);
+        contentValues50.put(gamemaster_Table.swipe_cols.focus, CS_FOCUS);
+        sqLiteDatabase.insert(gamemaster_Table.swipe_table, null, contentValues50);
 
 
         sqLiteDatabase.execSQL(
@@ -518,79 +642,80 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues33 = new ContentValues();
         contentValues33.put(gamemaster_Table.ratequestion_cols.text, "How much do you like dealing with People?");
         contentValues33.put(gamemaster_Table.ratequestion_cols.ce, 1);
-        contentValues33.put(gamemaster_Table.ratequestion_cols.cs , 1);
+        contentValues33.put(gamemaster_Table.ratequestion_cols.cs, 1);
         contentValues33.put(gamemaster_Table.ratequestion_cols.it, 8);
         contentValues33.put(gamemaster_Table.ratequestion_cols.is, 9);
         contentValues33.put(gamemaster_Table.ratequestion_cols.fun, 3);
-        contentValues33.put(gamemaster_Table.ratequestion_cols.score,6);
+        contentValues33.put(gamemaster_Table.ratequestion_cols.score, 6);
         contentValues33.put(gamemaster_Table.ratequestion_cols.focus, IT_FOCUS);
-        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table,null,contentValues33);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues33);
 
         ContentValues contentValues34 = new ContentValues();
         contentValues34.put(gamemaster_Table.ratequestion_cols.text, "How much do you like like dealing with Business?");
-        contentValues34.put(gamemaster_Table.ratequestion_cols.fun,4);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.focus,IT_FOCUS);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.score,6);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.ce,1);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.cs,1);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.is,10);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.it,9);
-        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table,null,contentValues34);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.fun, 4);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.focus, IT_FOCUS);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.score, 6);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.ce, 1);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.cs, 1);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.is, 10);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.it, 9);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues34);
 
         contentValues34 = new ContentValues();
         contentValues34.put(gamemaster_Table.ratequestion_cols.text, "How much do you like like dealing with Business?");
-        contentValues34.put(gamemaster_Table.ratequestion_cols.fun,4);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.focus,IS_FOCUS);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.score,6);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.ce,1);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.cs,1);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.is,10);
-        contentValues34.put(gamemaster_Table.ratequestion_cols.it,9);
-        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table,null,contentValues34);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.fun, 4);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.focus, IS_FOCUS);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.score, 6);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.ce, 1);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.cs, 1);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.is, 10);
+        contentValues34.put(gamemaster_Table.ratequestion_cols.it, 9);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues34);
 
         ContentValues contentValues35 = new ContentValues();
         contentValues35.put(gamemaster_Table.ratequestion_cols.text, "How detail oriented are you?");
-        contentValues35.put(gamemaster_Table.ratequestion_cols.fun,2);
-        contentValues35.put(gamemaster_Table.ratequestion_cols.focus,CE_FOCUS);
-        contentValues35.put(gamemaster_Table.ratequestion_cols.score,6);
-        contentValues35.put(gamemaster_Table.ratequestion_cols.ce,10);
-        contentValues35.put(gamemaster_Table.ratequestion_cols.cs,7);
-        contentValues35.put(gamemaster_Table.ratequestion_cols.is,4);
-        contentValues35.put(gamemaster_Table.ratequestion_cols.it,0);
-        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table,null,contentValues35);
+        contentValues35.put(gamemaster_Table.ratequestion_cols.fun, 2);
+        contentValues35.put(gamemaster_Table.ratequestion_cols.focus, CE_FOCUS);
+        contentValues35.put(gamemaster_Table.ratequestion_cols.score, 6);
+        contentValues35.put(gamemaster_Table.ratequestion_cols.ce, 10);
+        contentValues35.put(gamemaster_Table.ratequestion_cols.cs, 7);
+        contentValues35.put(gamemaster_Table.ratequestion_cols.is, 4);
+        contentValues35.put(gamemaster_Table.ratequestion_cols.it, 0);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues35);
 
         ContentValues contentValues36 = new ContentValues();
         contentValues36.put(gamemaster_Table.ratequestion_cols.text, "Rate your problem solving skills?");
-        contentValues36.put(gamemaster_Table.ratequestion_cols.fun,3);
-        contentValues36.put(gamemaster_Table.ratequestion_cols.focus,CE_FOCUS);
-        contentValues36.put(gamemaster_Table.ratequestion_cols.score,6);
-        contentValues36.put(gamemaster_Table.ratequestion_cols.ce,10);
-        contentValues36.put(gamemaster_Table.ratequestion_cols.cs,9);
-        contentValues36.put(gamemaster_Table.ratequestion_cols.is,5);
-        contentValues36.put(gamemaster_Table.ratequestion_cols.it,1);
-        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table,null,contentValues36);
+        contentValues36.put(gamemaster_Table.ratequestion_cols.fun, 3);
+        contentValues36.put(gamemaster_Table.ratequestion_cols.focus, CE_FOCUS);
+        contentValues36.put(gamemaster_Table.ratequestion_cols.score, 6);
+        contentValues36.put(gamemaster_Table.ratequestion_cols.ce, 10);
+        contentValues36.put(gamemaster_Table.ratequestion_cols.cs, 9);
+        contentValues36.put(gamemaster_Table.ratequestion_cols.is, 5);
+        contentValues36.put(gamemaster_Table.ratequestion_cols.it, 1);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues36);
 
         ContentValues contentValues42 = new ContentValues();
         contentValues42.put(gamemaster_Table.ratequestion_cols.text, "How hands on are you?");
-        contentValues42.put(gamemaster_Table.ratequestion_cols.fun,4);
-        contentValues42.put(gamemaster_Table.ratequestion_cols.focus,CE_FOCUS);
-        contentValues42.put(gamemaster_Table.ratequestion_cols.score,6);
-        contentValues42.put(gamemaster_Table.ratequestion_cols.ce,10);
-        contentValues42.put(gamemaster_Table.ratequestion_cols.cs,0);
-        contentValues42.put(gamemaster_Table.ratequestion_cols.is,0);
-        contentValues42.put(gamemaster_Table.ratequestion_cols.it,8);
-        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table,null,contentValues42);
+        contentValues42.put(gamemaster_Table.ratequestion_cols.fun, 4);
+        contentValues42.put(gamemaster_Table.ratequestion_cols.focus, CE_FOCUS);
+        contentValues42.put(gamemaster_Table.ratequestion_cols.score, 6);
+        contentValues42.put(gamemaster_Table.ratequestion_cols.ce, 10);
+        contentValues42.put(gamemaster_Table.ratequestion_cols.cs, 0);
+        contentValues42.put(gamemaster_Table.ratequestion_cols.is, 0);
+        contentValues42.put(gamemaster_Table.ratequestion_cols.it, 8);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues42);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.ratequestion_cols.fun,1);
-        contentValues.put(gamemaster_Table.ratequestion_cols.focus,IS_FOCUS);
-        contentValues.put(gamemaster_Table.ratequestion_cols.text,"Are you good in dealing with money?");
-        contentValues.put(gamemaster_Table.ratequestion_cols.is,10);
-        contentValues.put(gamemaster_Table.ratequestion_cols.ce,0);
-        contentValues.put(gamemaster_Table.ratequestion_cols.cs,0);
-        contentValues.put(gamemaster_Table.ratequestion_cols.it,0);
-        contentValues.put(gamemaster_Table.ratequestion_cols.score,6);
-        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table,null,contentValues);
+        contentValues.put(gamemaster_Table.ratequestion_cols.fun, 1);
+        contentValues.put(gamemaster_Table.ratequestion_cols.focus, IS_FOCUS);
+        contentValues.put(gamemaster_Table.ratequestion_cols.text, "Are you good in dealing with money?");
+        contentValues.put(gamemaster_Table.ratequestion_cols.is, 10);
+        contentValues.put(gamemaster_Table.ratequestion_cols.ce, 0);
+        contentValues.put(gamemaster_Table.ratequestion_cols.cs, 0);
+        contentValues.put(gamemaster_Table.ratequestion_cols.it, 0);
+        contentValues.put(gamemaster_Table.ratequestion_cols.score, 6);
+        sqLiteDatabase.insert(gamemaster_Table.ratequestion_table, null, contentValues);
+
 
         sqLiteDatabase.execSQL(
                 "create table " + gamemaster_Table.textquestion_table +
@@ -631,31 +756,31 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.insert(gamemaster_Table.textquestion_table, null, contentValues25);
 
         ContentValues contentValues28 = new ContentValues();
-        contentValues28.put(gamemaster_Table.textquestion_cols.text,"Which major would you choose?");
+        contentValues28.put(gamemaster_Table.textquestion_cols.text, "Which major would you choose?");
         contentValues28.put(gamemaster_Table.textquestion_cols.answer_id, 5);
         contentValues28.put(gamemaster_Table.textquestion_cols.focus, 1);
         contentValues28.put(gamemaster_Table.textquestion_cols.fun, 0);
-        sqLiteDatabase.insert(gamemaster_Table.textquestion_table,null,contentValues28);
+        sqLiteDatabase.insert(gamemaster_Table.textquestion_table, null, contentValues28);
 
         ContentValues contentValues37 = new ContentValues();
-        contentValues37.put(gamemaster_Table.textquestion_cols.text,"What would you like to work with?");
-        contentValues37.put(gamemaster_Table.textquestion_cols.focus,IT_FOCUS);
-        contentValues37.put(gamemaster_Table.textquestion_cols.fun,1);
-        contentValues37.put(gamemaster_Table.textquestion_cols.answer_id,6);
-        sqLiteDatabase.insert(gamemaster_Table.textquestion_table,null,contentValues37);
+        contentValues37.put(gamemaster_Table.textquestion_cols.text, "What would you like to work with?");
+        contentValues37.put(gamemaster_Table.textquestion_cols.focus, IT_FOCUS);
+        contentValues37.put(gamemaster_Table.textquestion_cols.fun, 1);
+        contentValues37.put(gamemaster_Table.textquestion_cols.answer_id, 6);
+        sqLiteDatabase.insert(gamemaster_Table.textquestion_table, null, contentValues37);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.textquestion_cols.text,"What sounds most appealing to you?");
-        contentValues.put(gamemaster_Table.textquestion_cols.focus,IS_FOCUS);
-        contentValues.put(gamemaster_Table.textquestion_cols.fun,2);
-        contentValues.put(gamemaster_Table.textquestion_cols.answer_id,7);
-        sqLiteDatabase.insert(gamemaster_Table.textquestion_table,null,contentValues);
+        contentValues.put(gamemaster_Table.textquestion_cols.text, "What sounds most appealing to you?");
+        contentValues.put(gamemaster_Table.textquestion_cols.focus, IS_FOCUS);
+        contentValues.put(gamemaster_Table.textquestion_cols.fun, 2);
+        contentValues.put(gamemaster_Table.textquestion_cols.answer_id, 7);
+        sqLiteDatabase.insert(gamemaster_Table.textquestion_table, null, contentValues);
 
         contentValues = new ContentValues();
-        contentValues.put(gamemaster_Table.textquestion_cols.text,"What is revenue?");
-        contentValues.put(gamemaster_Table.textquestion_cols.fun,3);
-        contentValues.put(gamemaster_Table.textquestion_cols.focus,IS_FOCUS);
-        contentValues.put(gamemaster_Table.textquestion_cols.answer_id,8);
+        contentValues.put(gamemaster_Table.textquestion_cols.text, "What is revenue?");
+        contentValues.put(gamemaster_Table.textquestion_cols.fun, 3);
+        contentValues.put(gamemaster_Table.textquestion_cols.focus, IS_FOCUS);
+        contentValues.put(gamemaster_Table.textquestion_cols.answer_id, 8);
     }
 
     @Override

@@ -70,5 +70,15 @@
         android:paddingLeft="35dp"
         app:srcCompat="@drawable/log_out_white" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:elevation="4dp"
+        app:srcCompat="@drawable/continue_white"
+        android:layout_alignTop="@+id/continue_button" />
+
 
 </RelativeLayout>

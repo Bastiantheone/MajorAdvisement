@@ -15,13 +15,13 @@ import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 
-// FIXME add Continue and Logout option, also save GM to database using updateGameMaster in DbConnect
 public class ScoreActivity extends AppCompatActivity {
     private GraphView graph;
     private TextView scoreTextView;
     private TextView linkTextView;
     private Button logoutButton;
     private Button continueButton;
+    private Button startOverButton;
     private GM gm;
 
     @Override
@@ -50,7 +50,25 @@ public class ScoreActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // FIXME instead of setting it back to 0 just continue. Needs more questions to have this
                 gm.funValue = 0;
+                Question q = gm.nextQuestion();
+                if(q!=null)
+                    q.display(ScoreActivity.this);
+            }
+        });
+
+        // reset everything
+        startOverButton = (Button)findViewById(R.id.start_over_button);
+        startOverButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gm.funValue = -1;
+                gm.globalCEScore = 0;
+                gm.globalITScore = 0;
+                gm.globalISScore = 0;
+                gm.globalCsScore = 0;
+                gm.globalScore = 0;
                 Question q = gm.nextQuestion();
                 if(q!=null)
                     q.display(ScoreActivity.this);

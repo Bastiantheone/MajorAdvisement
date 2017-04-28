@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RateActivity extends AppCompatActivity {
     private static final String TAG = "RateActivity";
@@ -18,6 +19,7 @@ public class RateActivity extends AppCompatActivity {
     private RatingBar ratingBar;
     private TextView textView;
     private RateQuestion rateQuestion;
+    private int increase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +31,14 @@ public class RateActivity extends AppCompatActivity {
 
         rateQuestion = (RateQuestion)GM.currentQuestion;
 
+        increase = 0;
+
         textView.setText(rateQuestion.getText());
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 float rating = ratingBar.getRating();
-
+                increase += rateQuestion.getScore();
                 GM.globalScore+=rateQuestion.getScore();
                 GM.globalCsScore+=calcScore(rateQuestion.getCs(),rating);
                 GM.globalITScore+=calcScore(rateQuestion.getIt(),rating);
@@ -52,6 +56,7 @@ public class RateActivity extends AppCompatActivity {
     }
 
     public void next(){
+        Toast.makeText(this,"+ "+increase+" pts",Toast.LENGTH_SHORT).show();
         Question q = GM.initialize(this).nextQuestion();
         if(q!=null)
             q.display(this);

@@ -432,7 +432,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues27.put(gamemaster_Table.image_cols.rightISRating, 0);
         sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues27);
 
-        /*
+
         ContentValues contentValues51 = new ContentValues();
         contentValues51.put(gamemaster_Table.image_cols.answers_id, 2);
         contentValues51.put(gamemaster_Table.image_cols.imgID, R.raw.casual_clothes);
@@ -524,7 +524,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues56.put(gamemaster_Table.image_cols.rightISRating, 8);
         sqLiteDatabase.insert(gamemaster_Table.image_table, null, contentValues56);
 //~~
-        */
+
 
 
 
@@ -782,6 +782,7 @@ public class QuestionBaseHelper extends SQLiteOpenHelper {
         contentValues.put(gamemaster_Table.textquestion_cols.fun, 3);
         contentValues.put(gamemaster_Table.textquestion_cols.focus, IS_FOCUS);
         contentValues.put(gamemaster_Table.textquestion_cols.answer_id, 8);
+        sqLiteDatabase.insert(gamemaster_Table.textquestion_table, null, contentValues);
     }
 
     @Override

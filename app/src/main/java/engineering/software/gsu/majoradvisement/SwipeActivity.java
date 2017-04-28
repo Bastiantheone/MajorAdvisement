@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ public class SwipeActivity extends AppCompatActivity {
     private ImageView lowerImage, upperImage;
     private TextView leftText, centerText, rightText;
     private Button nextButton;
+    private int increase;
 
     private List<Image> images;
 
@@ -42,11 +44,13 @@ public class SwipeActivity extends AppCompatActivity {
         leftText.setText(question.getTextLeft());
         rightText.setText(question.getTextRight());
 
+        increase = 0;
+
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(upperImage.getContentDescription().equals("Right")){
-
+                    increase += images.get(0).getRightScore();
                     GM.globalScore+=images.get(0).getRightScore();
                     GM.globalCsScore+=images.get(0).getRightCSRating();
                     GM.globalITScore+=images.get(0).getRightITRating();
@@ -54,6 +58,7 @@ public class SwipeActivity extends AppCompatActivity {
                     GM.globalCEScore+=images.get(0).getRightCERating();
                 }
                 else if(upperImage.getContentDescription().equals("Left")){
+                    increase += images.get(0).getLeftScore();
                     GM.globalScore+=images.get(0).getLeftScore();
                     GM.globalCsScore+=images.get(0).getLeftCSRating();
                     GM.globalITScore+=images.get(0).getLeftITRating();
@@ -61,6 +66,7 @@ public class SwipeActivity extends AppCompatActivity {
                     GM.globalCEScore+=images.get(0).getLeftCERating();
                 }
                 if(lowerImage.getContentDescription().equals("Right")){
+                    increase += images.get(1).getRightScore();
                     GM.globalScore+=images.get(1).getRightScore();
                     GM.globalCsScore+=images.get(1).getRightCSRating();
                     GM.globalITScore+=images.get(1).getRightITRating();
@@ -68,6 +74,7 @@ public class SwipeActivity extends AppCompatActivity {
                     GM.globalCEScore+=images.get(1).getRightCERating();
                 }
                 else if(lowerImage.getContentDescription().equals("Left")){
+                    increase += images.get(1).getLeftScore();
                     GM.globalScore+=images.get(1).getLeftScore();
                     GM.globalCsScore+=images.get(1).getLeftCSRating();
                     GM.globalITScore+=images.get(1).getLeftITRating();
@@ -80,6 +87,7 @@ public class SwipeActivity extends AppCompatActivity {
     }
 
     public void next(){
+        Toast.makeText(this,"+ "+increase+" pts",Toast.LENGTH_SHORT).show();
         Question q = GM.initialize(this).nextQuestion();
         if(q!=null)
             q.display(this);

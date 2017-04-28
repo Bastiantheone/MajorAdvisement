@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ public class QuestionActivity extends AppCompatActivity{
     Button aBtn, bBtn, cBtn, dBtn, nextButton;
     TextView Q;
     boolean a,b,c,d;
+    private int increase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,8 @@ public class QuestionActivity extends AppCompatActivity{
         bBtn.setText(answers.get(1).getText());
         cBtn.setText(answers.get(2).getText());
         dBtn.setText(answers.get(3).getText());
+
+        increase = 0;
 
         //Below are the methods to make the color swaps on the multiple choice question list: As well as set
         //the answers
@@ -84,7 +88,7 @@ public class QuestionActivity extends AppCompatActivity{
             public void onClick(View view) {
                 if(a){
                     //increase scores
-
+                    increase += answers.get(0).getScore();
                     GM.globalScore+=answers.get(0).getScore();
                     GM.globalCsScore+=answers.get(0).getCsRating();
                     GM.globalITScore+=answers.get(0).getItRating();
@@ -93,7 +97,7 @@ public class QuestionActivity extends AppCompatActivity{
                 }
                 else if(b){
                     //increase scores
-
+                    increase += answers.get(1).getScore();
                     GM.globalScore+=answers.get(1).getScore();
                     GM.globalCsScore+=answers.get(1).getCsRating();
                     GM.globalITScore+=answers.get(1).getItRating();
@@ -102,7 +106,7 @@ public class QuestionActivity extends AppCompatActivity{
                 }
                 else if(c){
                     //increase scores
-
+                    increase += answers.get(2).getScore();
                     GM.globalScore+=answers.get(2).getScore();
                     GM.globalCsScore+=answers.get(2).getCsRating();
                     GM.globalITScore+=answers.get(2).getItRating();
@@ -111,7 +115,7 @@ public class QuestionActivity extends AppCompatActivity{
                 }
                 else if(d){
                     //increase scores
-
+                    increase += answers.get(3).getScore();
                     GM.globalScore+=answers.get(3).getScore();
                     GM.globalCsScore+=answers.get(3).getCsRating();
                     GM.globalITScore+=answers.get(3).getItRating();
@@ -125,6 +129,7 @@ public class QuestionActivity extends AppCompatActivity{
     }
 
     public void next(){
+        Toast.makeText(this,"+ "+increase+" pts",Toast.LENGTH_SHORT).show();
         Question q = GM.initialize(this).nextQuestion();
         if(q!=null)
             q.display(this);

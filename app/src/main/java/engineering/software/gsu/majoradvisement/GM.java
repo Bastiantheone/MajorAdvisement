@@ -75,8 +75,9 @@ public class GM {
     }
 
     public Question fetchQuestion(List<Question> focus, int fun){
-        // enough fun, time for the score activity FIXME decide on a good fun value to stop, maybe reset fun in score activity
-        if(fun >= 20)
+        // enough fun, time for the score activity
+        // FIXME decide on a good fun value to take a break. Needs more questions for this
+        if(fun == 20)
             return null;
         List<Question>possibleQuestions = new ArrayList<>();
         for(int i = 0; i < focus.size(); i++){

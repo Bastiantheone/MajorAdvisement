@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/about_txt"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="56dp"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
         android:text="Example text that i made so i can view what the font + coloration look like"
@@ -17,22 +18,13 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:id="@+id/back_button"
-        android:layout_width="250dp"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:backgroundTint="@color/colorAccent"
-        android:text="Back" />
-
-    <Button
         android:id="@+id/GSUButton"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/back_button"
         android:backgroundTint="@color/DarkBlue"
-        android:text="Button" />
+        android:text="Learn More" />
 
     <TextView
         android:id="@+id/textView2"
@@ -44,4 +36,16 @@
         android:text="About"
         android:textSize="32sp"
         android:textStyle="bold|italic" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:elevation="3dp"
+        app:srcCompat="@android:drawable/ic_menu_info_details"
+        android:layout_alignTop="@+id/GSUButton"
+        android:layout_alignStart="@+id/textView2" />
+
 </RelativeLayout>

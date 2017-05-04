@@ -11,4 +11,5 @@
     <string name="ce_link"><a href="https://en.wikipedia.org/wiki/Computer_engineering">Computer Engineering</a></string>
     <string name="it_link"><a href="http://ceit.georgiasouthern.edu/it/degrees/bsit/">Information Technology</a></string>
     <string name="is_link"><a href="http://coba.georgiasouthern.edu/is/degrees/bba-is/0">Information Systems</a></string>
+    <string name="title_activity_about_screen">AboutScreenActivity</string>
 </resources>

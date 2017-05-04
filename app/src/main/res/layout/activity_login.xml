@@ -82,7 +82,7 @@
         android:layout_alignBottom="@+id/password_input" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/aboutIcon"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"

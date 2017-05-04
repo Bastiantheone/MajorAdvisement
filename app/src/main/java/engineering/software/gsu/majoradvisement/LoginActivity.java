@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 // FIXME add registration option use insertGameMaster from DbConnect to insert the new user
@@ -15,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     private Activity activity;
     private EditText usernameBox;
     private EditText passwordBox;
+    private ImageView aboutPic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
         usernameBox = (EditText)findViewById(R.id.username_input);
         passwordBox = (EditText)findViewById(R.id.password_input);
         register_button = (Button)findViewById(R.id.register_button);
+        aboutPic = (ImageView)findViewById(R.id.aboutIcon);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,6 +51,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
+
+        aboutPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // About page switch
+                Intent intent = new Intent(LoginActivity.this, AboutScreenActivity.class);
+                startActivity(intent);
             }
         });
     }

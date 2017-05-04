@@ -80,4 +80,12 @@
         android:layout_below="@+id/username_input"
         android:layout_alignStart="@+id/password_input"
         android:layout_alignBottom="@+id/password_input" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/about_icon" />
 </RelativeLayout>

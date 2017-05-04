@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purp"
     tools:context="engineering.software.gsu.majoradvisement.QuestionActivity">
 
     <Button
@@ -52,9 +53,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:textSize="22sp"
         android:text="Question"
-        android:textAppearance="@style/TextAppearance.AppCompat" />
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/cyan"
+        android:textSize="22sp" />
 
     <Button
         android:text="@string/next"

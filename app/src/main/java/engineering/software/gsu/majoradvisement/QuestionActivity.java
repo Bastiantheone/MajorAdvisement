@@ -47,40 +47,40 @@ public class QuestionActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 a=true;b=false;c=false;d=false;
-                aBtn.setBackgroundColor(Color.CYAN);
-                bBtn.setBackgroundColor(Color.RED);
-                cBtn.setBackgroundColor(Color.RED);
-                dBtn.setBackgroundColor(Color.RED);
+                aBtn.setBackgroundColor(getResources().getColor(R.color.cyan));
+                bBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
+                cBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
+                dBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
             }
         });
         bBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a=false;b=true;c=false;d=false;
-                aBtn.setBackgroundColor(Color.RED);
-                bBtn.setBackgroundColor(Color.CYAN);
-                cBtn.setBackgroundColor(Color.RED);
-                dBtn.setBackgroundColor(Color.RED);
+                aBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
+                bBtn.setBackgroundColor(getResources().getColor(R.color.cyan));
+                cBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
+                dBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
             }
         });
         cBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a=false;b=false;c=true;d=false;
-                aBtn.setBackgroundColor(Color.RED);
-                bBtn.setBackgroundColor(Color.RED);
-                cBtn.setBackgroundColor(Color.CYAN);
-                dBtn.setBackgroundColor(Color.RED);
+                aBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
+                bBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
+                cBtn.setBackgroundColor(getResources().getColor(R.color.cyan));
+                dBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
             }
         });
         dBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a=false;b=false;c=false;d=true;
-                aBtn.setBackgroundColor(Color.RED);
-                bBtn.setBackgroundColor(Color.RED);
-                cBtn.setBackgroundColor(Color.RED);
-                dBtn.setBackgroundColor(Color.CYAN);
+                aBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
+                bBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
+                cBtn.setBackgroundColor(getResources().getColor(R.color.button_deselected));
+                dBtn.setBackgroundColor(getResources().getColor(R.color.cyan));
             }
         });
         nextButton.setOnClickListener(new View.OnClickListener() {

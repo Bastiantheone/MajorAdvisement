@@ -27,26 +27,28 @@
         android:id="@+id/login_button"
         android:layout_width="270dp"
         android:layout_height="70dp"
+        android:layout_above="@+id/register_button"
+        android:layout_alignStart="@+id/username_input"
         android:layout_marginBottom="28dp"
         android:layout_weight="4"
         android:backgroundTint="@color/colorAccent"
         android:text="Login"
         android:textColor="@android:color/white"
-        android:layout_above="@+id/register_button"
-        android:layout_alignStart="@+id/username_input" />
+        android:textSize="18sp" />
     //register Design edit
 
     <Button
         android:id="@+id/register_button"
         android:layout_width="270dp"
         android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/login_button"
+        android:layout_marginBottom="66dp"
         android:layout_weight="4"
         android:backgroundTint="@color/colorAccent"
         android:text="Register"
         android:textColor="@android:color/white"
-        android:layout_marginBottom="66dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/login_button" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/username_input"
